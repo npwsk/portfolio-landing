@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 body,
 p,
 h1,
@@ -22,12 +24,11 @@ select {
   font: inherit;
 }
 
-/* ------ General ------ */
 body {
   min-height: 100vh;
-  color: #ffffff;
-  font-family: "Inter", sans-serif;
-  background-color: #000000;
+  color: $color-white;
+  font-family: $font-main;
+  background-color: $color-bg-dark;
 }
 
 /** @define container */

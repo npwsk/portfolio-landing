@@ -1,3 +1,5 @@
+/* ------ Colors ------- */
+/* ------ Fonts ------- */
 body,
 p,
 h1,
@@ -22,7 +24,6 @@ select {
   font: inherit;
 }
 
-/* ------ General ------ */
 body {
   min-height: 100vh;
   color: #ffffff;
