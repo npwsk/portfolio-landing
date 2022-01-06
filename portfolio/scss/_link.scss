@@ -1,0 +1,10 @@
+@use "variables" as *;
+
+.link {
+  color: $color-white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: $color-gold;
+}

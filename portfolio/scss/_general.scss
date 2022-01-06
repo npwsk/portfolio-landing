@@ -1,12 +1,17 @@
 @use "variables" as *;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body,
 p,
 h1,
 h2,
 h3,
 h4,
-ul,
 figure,
 picture {
   margin: 0;

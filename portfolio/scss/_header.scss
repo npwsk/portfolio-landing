@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+.header {
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.header__content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding-block: 20px;
+}
+
+.header__nav {
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__lang-toggler {
+  display: flex;
+  gap: 9px;
+  font-weight: 700;
+}
+
+.header__lang--active {
+  color: $color-gold;
+}
