@@ -1,0 +1,17 @@
+@use "variables" as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 55px;
+  color: $color-dark;
+  line-height: 40px;
+  text-decoration: none;
+  background-color: $color-gold;
+}
+
+.button:hover {
+  color: $color-white;
+}

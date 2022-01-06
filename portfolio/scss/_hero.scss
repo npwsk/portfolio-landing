@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+.hero__content {
+  height: 910px;
+  margin-top: -90px;
+  padding-top: 250px;
+  padding-inline: 80px;
+  background: url("../img/bg.jpg") no-repeat 100%;
+}
+
+.hero__name {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 60px;
+  font-family: $font-title;
+  line-height: 120px;
+}
+
+.hero__about {
+  max-width: 470px;
+  margin-bottom: 25px;
+  line-height: 40px;
+}

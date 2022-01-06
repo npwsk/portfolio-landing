@@ -32,8 +32,9 @@ select {
 body {
   min-height: 100vh;
   color: $color-white;
+  font-size: 20px;
   font-family: $font-main;
-  background-color: $color-bg-dark;
+  background-color: $color-dark;
 }
 
 .container {
