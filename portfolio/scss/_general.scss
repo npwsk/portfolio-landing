@@ -32,6 +32,14 @@ body {
   background-color: $color-dark;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+
 .container {
   margin-inline: auto;
   max-width: 1440px;
@@ -44,6 +52,19 @@ body {
 
   &:hover {
     color: $color-gold;
+  }
+
+  &--icon {
+    display: inline-block;
+  }
+
+  &__svg {
+    vertical-align: middle;
+  }
+
+  &__svg:hover,
+  &__svg:hover path {
+    fill: $color-gold;
   }
 }
 

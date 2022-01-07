@@ -30,6 +30,14 @@ body {
   background-color: #000000;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+
 .container {
   margin-inline: auto;
   max-width: 1440px;
@@ -42,6 +50,15 @@ body {
 }
 .link:hover {
   color: #bdae82;
+}
+.link--icon {
+  display: inline-block;
+}
+.link__svg {
+  vertical-align: middle;
+}
+.link__svg:hover, .link__svg:hover path {
+  fill: #bdae82;
 }
 
 .title {
@@ -314,4 +331,26 @@ body {
 .contacts__textarea {
   height: 100px;
   margin-bottom: 10px;
+  resize: none;
+}
+
+.footer {
+  font-size: 20px;
+  line-height: 2.5;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 50px;
+}
+.footer__copyright {
+  display: flex;
+  gap: 20px;
+}
+.footer__socials-list {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }/*# sourceMappingURL=index.css.map */
