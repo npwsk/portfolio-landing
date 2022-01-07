@@ -80,9 +80,34 @@ body {
   font-size: 20px;
   text-decoration: none;
   background-color: #bdae82;
+  cursor: pointer;
 }
 .button:hover {
   color: #ffffff;
+}
+
+.tab-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 55px;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tab-btn:hover {
+  color: #ffffff;
+}
+
+.tab-btn {
+  color: #bdae82;
+  background-color: transparent;
+  border: 2px solid #bdae82;
+}
+.tab-btn--active {
+  color: #000000;
+  background-color: #bdae82;
 }
 
 .header {
@@ -169,4 +194,23 @@ body {
 }
 .skills__item-text {
   margin: 0;
+}
+
+.portfolio__tabs {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0;
+  list-style: none;
+}
+.portfolio__tab-pane {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.portfolio__img {
+  max-width: 450px;
 }/*# sourceMappingURL=index.css.map */

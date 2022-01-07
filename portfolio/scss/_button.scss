@@ -10,8 +10,37 @@
   font-size: 20px;
   text-decoration: none;
   background-color: $color-gold;
+  cursor: pointer;
 
   &:hover {
     color: $color-white;
+  }
+}
+
+%button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 55px;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.tab-btn {
+  @extend %button;
+
+  color: $color-gold;
+  background-color: transparent;
+  border: 2px solid $color-gold;
+
+  &--active {
+    color: $color-dark;
+    background-color: $color-gold;
   }
 }

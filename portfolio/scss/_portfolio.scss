@@ -1,0 +1,22 @@
+.portfolio {
+  &__tabs {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 60px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__tab-pane {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  &__img {
+    max-width: 450px;
+  }
+}
