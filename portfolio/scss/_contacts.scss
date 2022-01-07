@@ -1,0 +1,46 @@
+@use "variables" as *;
+
+.contacts {
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 700px;
+    padding-top: 60px;
+    background-image: url("../img/contacts-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 450px;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 5px 20px;
+    color: $color-gold;
+    font-size: 20px;
+    background: rgba(0 0 0 / 50%);
+    border: none;
+    outline: 2px solid $color-gold;
+    outline-offset: -2px;
+  }
+
+  &__input::placeholder {
+    color: $color-gold;
+    font-size: 20px;
+  }
+
+  &__textarea {
+    height: 100px;
+    margin-bottom: 10px;
+    resize: none;
+  }
+}

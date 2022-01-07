@@ -270,4 +270,48 @@ body {
   padding-bottom: 20px;
   text-align: center;
   list-style: none;
+}
+
+.contacts__container {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 700px;
+  padding-top: 60px;
+  background-image: url("../img/contacts-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.contacts__title {
+  margin-bottom: 40px;
+}
+.contacts__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 450px;
+}
+.contacts__input, .contacts__textarea {
+  padding: 5px 20px;
+  color: #bdae82;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: 2px solid #bdae82;
+  outline-offset: -2px;
+}
+.contacts__input::-moz-placeholder {
+  color: #bdae82;
+  font-size: 20px;
+}
+.contacts__input:-ms-input-placeholder {
+  color: #bdae82;
+  font-size: 20px;
+}
+.contacts__input::placeholder {
+  color: #bdae82;
+  font-size: 20px;
+}
+.contacts__textarea {
+  height: 100px;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=index.css.map */
