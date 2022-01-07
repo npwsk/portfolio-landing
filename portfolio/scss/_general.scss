@@ -38,6 +38,15 @@ body {
   padding-inline: 20px;
 }
 
+.link {
+  color: $color-white;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-gold;
+  }
+}
+
 .title {
   margin: 0;
   color: $color-gold;
@@ -47,22 +56,22 @@ body {
 
 .section {
   padding-top: 100px;
-}
 
-.section__title {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  width: 700px;
-  margin-inline: auto;
-  margin-bottom: 60px;
-}
+  &__title {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 700px;
+    margin-inline: auto;
+    margin-bottom: 60px;
 
-.section__title::before,
-.section__title::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: $color-gold;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $color-gold;
+    }
+  }
 }

@@ -36,6 +36,14 @@ body {
   padding-inline: 20px;
 }
 
+.link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.link:hover {
+  color: #bdae82;
+}
+
 .title {
   margin: 0;
   color: #bdae82;
@@ -46,7 +54,6 @@ body {
 .section {
   padding-top: 100px;
 }
-
 .section__title {
   display: flex;
   gap: 20px;
@@ -55,23 +62,12 @@ body {
   margin-inline: auto;
   margin-bottom: 60px;
 }
-
-.section__title::before,
-.section__title::after {
+.section__title::before, .section__title::after {
   content: "";
   display: block;
   width: 100%;
   height: 2px;
   background-color: #bdae82;
-}
-
-.link {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.link:hover {
-  color: #bdae82;
 }
 
 .button {
@@ -85,7 +81,6 @@ body {
   text-decoration: none;
   background-color: #bdae82;
 }
-
 .button:hover {
   color: #ffffff;
 }
@@ -93,19 +88,16 @@ body {
 .header {
   line-height: 50px;
 }
-
 .header__content {
   display: flex;
   gap: 30px;
   align-items: center;
   padding-block: 20px;
 }
-
 .header__nav {
   margin-left: auto;
   font-size: 20px;
 }
-
 .header__nav-list {
   display: flex;
   gap: 30px;
@@ -113,14 +105,12 @@ body {
   padding: 0;
   list-style: none;
 }
-
 .header__lang-toggler {
   display: flex;
   gap: 9px;
   font-weight: 700;
   font-size: 20px;
 }
-
 .header__lang--active {
   color: #bdae82;
 }
@@ -132,7 +122,6 @@ body {
   padding-inline: 80px;
   background: url("../img/bg.jpg") no-repeat 100%;
 }
-
 .hero__name {
   margin: 0;
   margin-bottom: 10px;
@@ -140,7 +129,6 @@ body {
   font-size: 60px;
   font-family: "Merriweather", serif;
 }
-
 .hero__about {
   max-width: 470px;
   margin: 0;
@@ -162,14 +150,6 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 0;
 }
-.skills__item-title {
-  margin: 0;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-.skills__item-text {
-  margin: 0;
-}
 .skills__item--icon--camera {
   background-image: url("../img/icons/camera-icon.svg");
 }
@@ -181,4 +161,12 @@ body {
 }
 .skills__item--icon--mic {
   background-image: url("../img/icons/mic-icon.svg");
+}
+.skills__item-title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.skills__item-text {
+  margin: 0;
 }/*# sourceMappingURL=index.css.map */

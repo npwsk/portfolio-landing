@@ -10,8 +10,8 @@
   font-size: 20px;
   text-decoration: none;
   background-color: $color-gold;
-}
 
-.button:hover {
-  color: $color-white;
+  &:hover {
+    color: $color-white;
+  }
 }

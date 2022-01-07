@@ -14,30 +14,32 @@
     background-repeat: no-repeat;
     background-position: 50% 0;
 
-    &-title {
-      margin: 0;
-      margin-bottom: 20px;
-      font-size: 20px;
-    }
+    &--icon {
+      &--camera {
+        background-image: url("../img/icons/camera-icon.svg");
+      }
 
-    &-text {
-      margin: 0;
-    }
+      &--video {
+        background-image: url("../img/icons/video-icon.svg");
+      }
 
-    &--icon--camera {
-      background-image: url("../img/icons/camera-icon.svg");
-    }
+      &--image {
+        background-image: url("../img/icons/image-icon.svg");
+      }
 
-    &--icon--video {
-      background-image: url("../img/icons/video-icon.svg");
+      &--mic {
+        background-image: url("../img/icons/mic-icon.svg");
+      }
     }
+  }
 
-    &--icon--image {
-      background-image: url("../img/icons/image-icon.svg");
-    }
+  &__item-title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
 
-    &--icon--mic {
-      background-image: url("../img/icons/mic-icon.svg");
-    }
+  &__item-text {
+    margin: 0;
   }
 }
