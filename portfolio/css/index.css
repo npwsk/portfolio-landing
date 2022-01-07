@@ -213,4 +213,22 @@ body {
 }
 .portfolio__img {
   max-width: 450px;
+}
+
+.video-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1400/705;
+  background-image: url("../img/video-player.jpg");
+  background-size: cover;
+}
+.video-player::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/icons/play-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }/*# sourceMappingURL=index.css.map */
