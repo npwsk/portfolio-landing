@@ -34,7 +34,7 @@ html {
 body {
   min-height: 100vh;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Inter", sans-serif;
   line-height: 2;
   background-color: #000000;
@@ -50,7 +50,6 @@ body {
   color: #bdae82;
   font-size: 40px;
   font-family: "Merriweather", serif;
-  line-height: 80px;
 }
 
 .section {
@@ -91,7 +90,7 @@ body {
   width: 220px;
   height: 55px;
   color: #000000;
-  line-height: 40px;
+  font-size: 20px;
   text-decoration: none;
   background-color: #bdae82;
 }
@@ -114,7 +113,6 @@ body {
 .header__nav {
   margin-left: auto;
   font-size: 20px;
-  line-height: 50px;
 }
 
 .header__nav-list {
@@ -148,13 +146,12 @@ body {
   font-weight: 700;
   font-size: 60px;
   font-family: "Merriweather", serif;
-  line-height: 120px;
 }
 
 .hero__about {
   max-width: 470px;
   margin-bottom: 25px;
-  line-height: 40px;
+  font-size: 20px;
 }
 
 .skills__list {
@@ -174,9 +171,6 @@ body {
 .skills__item-title {
   margin-bottom: 20px;
   font-size: 20px;
-}
-.skills__item-text {
-  font-size: 18px;
 }
 .skills__item--icon--camera {
   background-image: url("../img/icons/camera-icon.svg");
