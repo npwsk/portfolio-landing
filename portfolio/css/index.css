@@ -36,6 +36,7 @@ body {
   color: #ffffff;
   font-size: 20px;
   font-family: "Inter", sans-serif;
+  line-height: 2;
   background-color: #000000;
 }
 
@@ -43,6 +44,35 @@ body {
   margin-inline: auto;
   max-width: 1440px;
   padding-inline: 20px;
+}
+
+.title {
+  color: #bdae82;
+  font-size: 40px;
+  font-family: "Merriweather", serif;
+  line-height: 80px;
+}
+
+.section {
+  padding-top: 100px;
+}
+
+.section__title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 700px;
+  margin-inline: auto;
+  margin-bottom: 60px;
+}
+
+.section__title::before,
+.section__title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #bdae82;
 }
 
 .link {
@@ -125,4 +155,38 @@ body {
   max-width: 470px;
   margin-bottom: 25px;
   line-height: 40px;
+}
+
+.skills__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.skills__item {
+  padding: 100px 20px 8px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+.skills__item-title {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.skills__item-text {
+  font-size: 18px;
+}
+.skills__item--icon--camera {
+  background-image: url("../img/icons/camera-icon.svg");
+}
+.skills__item--icon--video {
+  background-image: url("../img/icons/video-icon.svg");
+}
+.skills__item--icon--image {
+  background-image: url("../img/icons/image-icon.svg");
+}
+.skills__item--icon--mic {
+  background-image: url("../img/icons/mic-icon.svg");
 }/*# sourceMappingURL=index.css.map */

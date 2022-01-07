@@ -1,0 +1,42 @@
+.skills {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 100px 20px 8px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+
+    &-title {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    &-text {
+      font-size: 18px;
+    }
+
+    &--icon--camera {
+      background-image: url("../img/icons/camera-icon.svg");
+    }
+
+    &--icon--video {
+      background-image: url("../img/icons/video-icon.svg");
+    }
+
+    &--icon--image {
+      background-image: url("../img/icons/image-icon.svg");
+    }
+
+    &--icon--mic {
+      background-image: url("../img/icons/mic-icon.svg");
+    }
+  }
+}
