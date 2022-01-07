@@ -309,22 +309,22 @@ body {
 }
 .contacts__input, .contacts__textarea {
   padding: 5px 20px;
-  color: #bdae82;
+  color: #ffffff;
   font-size: 20px;
   background: rgba(0, 0, 0, 0.5);
   border: none;
   outline: 2px solid #bdae82;
   outline-offset: -2px;
 }
-.contacts__input::-moz-placeholder {
+.contacts__input::-moz-placeholder, .contacts__textarea::-moz-placeholder {
   color: #bdae82;
   font-size: 20px;
 }
-.contacts__input:-ms-input-placeholder {
+.contacts__input:-ms-input-placeholder, .contacts__textarea:-ms-input-placeholder {
   color: #bdae82;
   font-size: 20px;
 }
-.contacts__input::placeholder {
+.contacts__input::placeholder, .contacts__textarea::placeholder {
   color: #bdae82;
   font-size: 20px;
 }
