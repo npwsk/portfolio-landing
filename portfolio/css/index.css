@@ -4,17 +4,6 @@
   box-sizing: border-box;
 }
 
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-figure,
-picture {
-  margin: 0;
-}
-
 img,
 picture {
   display: block;
@@ -33,6 +22,7 @@ html {
 
 body {
   min-height: 100vh;
+  margin: 0;
   color: #ffffff;
   font-size: 18px;
   font-family: "Inter", sans-serif;
@@ -47,6 +37,7 @@ body {
 }
 
 .title {
+  margin: 0;
   color: #bdae82;
   font-size: 40px;
   font-family: "Merriweather", serif;
@@ -127,6 +118,7 @@ body {
   display: flex;
   gap: 9px;
   font-weight: 700;
+  font-size: 20px;
 }
 
 .header__lang--active {
@@ -142,6 +134,7 @@ body {
 }
 
 .hero__name {
+  margin: 0;
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 60px;
@@ -150,6 +143,7 @@ body {
 
 .hero__about {
   max-width: 470px;
+  margin: 0;
   margin-bottom: 25px;
   font-size: 20px;
 }
@@ -169,8 +163,12 @@ body {
   background-position: 50% 0;
 }
 .skills__item-title {
+  margin: 0;
   margin-bottom: 20px;
   font-size: 20px;
+}
+.skills__item-text {
+  margin: 0;
 }
 .skills__item--icon--camera {
   background-image: url("../img/icons/camera-icon.svg");

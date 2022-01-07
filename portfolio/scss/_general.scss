@@ -6,17 +6,6 @@
   box-sizing: border-box;
 }
 
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-figure,
-picture {
-  margin: 0;
-}
-
 img,
 picture {
   display: block;
@@ -35,6 +24,7 @@ html {
 
 body {
   min-height: 100vh;
+  margin: 0;
   color: $color-white;
   font-size: 18px;
   font-family: $font-main;
@@ -49,6 +39,7 @@ body {
 }
 
 .title {
+  margin: 0;
   color: $color-gold;
   font-size: 40px;
   font-family: $font-title;

@@ -15,8 +15,13 @@
     background-position: 50% 0;
 
     &-title {
+      margin: 0;
       margin-bottom: 20px;
       font-size: 20px;
+    }
+
+    &-text {
+      margin: 0;
     }
 
     &--icon--camera {
