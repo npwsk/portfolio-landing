@@ -30,7 +30,24 @@
     line-height: 50px;
   }
 
-  &__lang--active {
-    color: $color-gold;
+  &__lang-btn {
+    padding: 0;
+    color: $color-white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-gold;
+    }
+
+    &--active {
+      color: $color-gold;
+    }
+
+    &--active:hover {
+      color: $color-white;
+    }
   }
 }

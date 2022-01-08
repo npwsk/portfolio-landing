@@ -161,8 +161,22 @@ body {
   font-size: 20px;
   line-height: 50px;
 }
-.header__lang--active {
+.header__lang-btn {
+  padding: 0;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+.header__lang-btn:hover {
   color: #bdae82;
+}
+.header__lang-btn--active {
+  color: #bdae82;
+}
+.header__lang-btn--active:hover {
+  color: #ffffff;
 }
 
 .hero__content {
