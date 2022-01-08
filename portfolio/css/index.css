@@ -129,9 +129,6 @@ body {
   background-color: #bdae82;
 }
 
-.header {
-  line-height: 50px;
-}
 .header__content {
   display: flex;
   gap: 30px;
@@ -141,6 +138,7 @@ body {
 .header__nav {
   margin-left: auto;
   font-size: 20px;
+  line-height: 50px;
 }
 .header__nav-list {
   display: flex;
@@ -154,6 +152,7 @@ body {
   gap: 9px;
   font-weight: 700;
   font-size: 20px;
+  line-height: 50px;
 }
 .header__lang--active {
   color: #bdae82;

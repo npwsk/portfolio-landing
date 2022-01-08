@@ -1,8 +1,6 @@
 @use "variables" as *;
 
 .header {
-  line-height: 50px;
-
   &__content {
     display: flex;
     gap: 30px;
@@ -13,6 +11,7 @@
   &__nav {
     margin-left: auto;
     font-size: 20px;
+    line-height: 50px;
   }
 
   &__nav-list {
@@ -28,6 +27,7 @@
     gap: 9px;
     font-weight: 700;
     font-size: 20px;
+    line-height: 50px;
   }
 
   &__lang--active {
