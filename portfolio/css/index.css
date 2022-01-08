@@ -78,12 +78,12 @@ body {
   color: #bdae82;
 }
 .link--icon {
-  display: inline-block;
+  display: block;
 }
 .link__svg {
   vertical-align: middle;
 }
-.link__svg:hover, .link__svg:hover path {
+.link__svg:hover, .link__svg-path:hover {
   fill: #bdae82;
 }
 
