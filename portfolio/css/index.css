@@ -5,7 +5,8 @@
 }
 
 img,
-picture {
+picture,
+svg {
   display: block;
 }
 
@@ -87,7 +88,7 @@ body {
 .link__svg, .link__svg-path {
   transition: all 0.2s ease-in-out;
 }
-.link__svg:hover, .link__svg-path:hover {
+.link--icon:hover .link__svg, .link--icon:hover .link__svg-path {
   fill: #bdae82;
 }
 
@@ -351,7 +352,6 @@ body {
 
 .footer {
   font-size: 20px;
-  line-height: 2.5;
 }
 .footer__container {
   display: flex;
@@ -362,10 +362,17 @@ body {
   display: flex;
   gap: 20px;
 }
+.footer__copyright, .footer__rs-school {
+  line-height: 2.5;
+}
 .footer__socials-list {
   display: flex;
   gap: 20px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.footer__socials-item {
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=index.css.map */

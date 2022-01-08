@@ -22,8 +22,8 @@
     transition: all 0.2s ease-in-out;
   }
 
-  &__svg:hover,
-  &__svg-path:hover {
+  &--icon:hover &__svg,
+  &--icon:hover &__svg-path {
     fill: $color-gold;
   }
 }
