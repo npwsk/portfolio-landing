@@ -354,6 +354,7 @@ body {
   font-size: 20px;
 }
 .footer__container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding-block: 50px;
@@ -361,6 +362,11 @@ body {
 .footer__copyright {
   display: flex;
   gap: 20px;
+}
+.footer__rs-school {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .footer__copyright, .footer__rs-school {
   line-height: 2.5;
