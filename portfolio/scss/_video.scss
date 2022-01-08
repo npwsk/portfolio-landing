@@ -14,9 +14,15 @@
     display: block;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 
     &-svg {
       vertical-align: middle;
+    }
+
+    &-svg,
+    &-path {
+      transition: all 0.2s ease-in-out;
     }
 
     &:hover &-svg,

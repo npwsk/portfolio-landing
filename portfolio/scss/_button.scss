@@ -12,6 +12,7 @@
   background-color: $color-gold;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     color: $color-white;
@@ -28,6 +29,7 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     color: $color-white;

@@ -3,6 +3,7 @@
 .link {
   color: $color-white;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     color: $color-gold;
@@ -14,6 +15,11 @@
 
   &__svg {
     vertical-align: middle;
+  }
+
+  &__svg,
+  &__svg-path {
+    transition: all 0.2s ease-in-out;
   }
 
   &__svg:hover,
