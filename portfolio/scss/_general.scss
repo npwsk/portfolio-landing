@@ -46,28 +46,6 @@ body {
   padding-inline: 20px;
 }
 
-.link {
-  color: $color-white;
-  text-decoration: none;
-
-  &:hover {
-    color: $color-gold;
-  }
-
-  &--icon {
-    display: inline-block;
-  }
-
-  &__svg {
-    vertical-align: middle;
-  }
-
-  &__svg:hover,
-  &__svg:hover path {
-    fill: $color-gold;
-  }
-}
-
 .title {
   margin: 0;
   color: $color-gold;
