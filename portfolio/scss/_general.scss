@@ -31,6 +31,10 @@ body {
   font-family: $font-main;
   line-height: 2;
   background-color: $color-dark;
+
+  @media (max-width: $breakpoint-tablet) {
+    line-height: 1.2;
+  }
 }
 
 .visually-hidden {
@@ -45,7 +49,11 @@ body {
   margin-inline: auto;
   max-width: 1440px;
   padding-inline: 20px;
-  overflow: hidden;
+  overflow-x: hidden;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-inline: 60px;
+  }
 }
 
 .title {

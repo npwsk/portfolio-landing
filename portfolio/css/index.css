@@ -30,6 +30,11 @@ body {
   line-height: 2;
   background-color: #000000;
 }
+@media (max-width: 768px) {
+  body {
+    line-height: 1.2;
+  }
+}
 
 .visually-hidden {
   position: absolute;
@@ -43,7 +48,12 @@ body {
   margin-inline: auto;
   max-width: 1440px;
   padding-inline: 20px;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 60px;
+  }
 }
 
 .title {
@@ -192,8 +202,17 @@ body {
   height: 910px;
   margin-top: -90px;
   padding-top: 250px;
-  padding-inline: 80px;
-  background: url("../img/bg.jpg") no-repeat 100%;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 768px) {
+  .hero__content {
+    height: auto;
+    min-height: 590px;
+    padding-top: 168px;
+    background-image: url("../img/bg-touch.jpg");
+  }
 }
 .hero__name {
   margin: 0;
@@ -202,11 +221,40 @@ body {
   font-size: 60px;
   font-family: "Merriweather", serif;
 }
+@media (min-width: 769px) {
+  .hero__name {
+    margin-left: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .hero__name {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 2;
+  }
+}
 .hero__about {
   max-width: 470px;
   margin: 0;
   margin-bottom: 25px;
   font-size: 20px;
+}
+@media (min-width: 769px) {
+  .hero__about {
+    margin-left: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .hero__about {
+    max-width: 390px;
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 769px) {
+  .hero__btn {
+    margin-left: 60px;
+  }
 }
 
 .skills__list {
