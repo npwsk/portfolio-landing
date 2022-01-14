@@ -62,17 +62,34 @@ body {
   font-size: 40px;
   font-family: "Merriweather", serif;
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+}
 
 .section {
   padding-top: 100px;
+}
+@media (max-width: 768px) {
+  .section {
+    padding-top: 80px;
+  }
 }
 .section__title {
   display: flex;
   gap: 20px;
   align-items: center;
-  width: 700px;
+  max-width: 700px;
   margin-inline: auto;
   margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .section__title {
+    max-width: 364px;
+    margin-bottom: 60px;
+    line-height: 80px;
+  }
 }
 .section__title::before, .section__title::after {
   content: "";
@@ -388,6 +405,11 @@ body {
 }
 .contacts__title {
   margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .contacts__title {
+    line-height: 2;
+  }
 }
 .contacts__form {
   display: flex;
