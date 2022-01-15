@@ -365,12 +365,24 @@ body {
   max-width: 450px;
 }
 
+@media (max-width: 768px) {
+  .video__container {
+    padding-inline: 0;
+  }
+}
+
 .video-player {
   position: relative;
   width: 100%;
   aspect-ratio: 1400/705;
   background-image: url("../img/video-player.jpg");
   background-size: cover;
+}
+@media (max-width: 768px) {
+  .video-player {
+    aspect-ratio: 768/418;
+    background-image: url("../img/video-player-tablet.jpg");
+  }
 }
 .video-player__btn {
   position: absolute;
@@ -383,6 +395,11 @@ body {
 }
 .video-player__btn-svg {
   vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .video-player__btn-svg {
+    width: 64.62px;
+  }
 }
 .video-player__btn-svg, .video-player__btn-path {
   transition: all 0.2s ease-in-out;
