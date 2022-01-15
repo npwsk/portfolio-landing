@@ -147,7 +147,7 @@ body {
 
 .header__content {
   display: flex;
-  gap: 30px;
+  gap: 31px;
   align-items: center;
   padding-block: 20px;
 }
@@ -158,7 +158,7 @@ body {
 }
 .header__nav-list {
   display: flex;
-  gap: 30px;
+  gap: 31px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -166,6 +166,7 @@ body {
 .header__lang-toggler {
   display: flex;
   gap: 9px;
+  margin-right: -1px;
   font-weight: 700;
   font-size: 20px;
   line-height: 50px;
@@ -215,6 +216,7 @@ body {
   gap: 40px;
   margin: 0;
   padding: 0;
+  padding-bottom: 2px;
   list-style: none;
 }
 .skills__item {
