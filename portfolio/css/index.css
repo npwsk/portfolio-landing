@@ -76,7 +76,7 @@ body {
     padding-top: 80px;
   }
 }
-.section__title {
+.section__title, .skills__title {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -85,13 +85,13 @@ body {
   margin-bottom: 60px;
 }
 @media (max-width: 768px) {
-  .section__title {
+  .section__title, .skills__title {
     max-width: 364px;
     margin-bottom: 60px;
     line-height: 80px;
   }
 }
-.section__title::before, .section__title::after {
+.section__title::before, .skills__title::before, .section__title::after, .skills__title::after {
   content: "";
   display: block;
   width: 100%;
@@ -275,6 +275,14 @@ body {
   }
 }
 
+.skills__title {
+  /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+}
+@media (max-width: 768px) {
+  .skills__title {
+    margin-bottom: 45px;
+  }
+}
 .skills__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -284,11 +292,23 @@ body {
   padding-bottom: 2px;
   list-style: none;
 }
+@media (max-width: 768px) {
+  .skills__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 37px 44px;
+    padding-bottom: 40px;
+  }
+}
 .skills__item {
   padding: 100px 20px 8px;
   text-align: center;
   background-repeat: no-repeat;
   background-position: 50% 0;
+}
+@media (max-width: 768px) {
+  .skills__item {
+    padding: 80px 10px 40px;
+  }
 }
 .skills__item--icon--camera {
   background-image: url("../img/icons/camera-icon.svg");
@@ -307,8 +327,18 @@ body {
   margin-bottom: 20px;
   font-size: 20px;
 }
+@media (max-width: 768px) {
+  .skills__item-title {
+    line-height: 2;
+  }
+}
 .skills__item-text {
   margin: 0;
+}
+@media (max-width: 768px) {
+  .skills__item-text {
+    line-height: 21.78px;
+  }
 }
 
 .portfolio__tabs {
