@@ -87,7 +87,7 @@ body {
 @media (max-width: 768px) {
   .section__title, .skills__title {
     max-width: 364px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     line-height: 80px;
   }
 }
@@ -349,6 +349,11 @@ body {
   margin-bottom: 60px;
   padding: 0;
   list-style: none;
+}
+@media (max-width: 768px) {
+  .portfolio__tabs {
+    flex-wrap: wrap;
+  }
 }
 .portfolio__tab-pane {
   display: flex;
