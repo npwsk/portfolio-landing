@@ -12,6 +12,13 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      gap: 50px;
+      max-width: 420px;
+      margin-inline: auto;
+    }
   }
 
   &__item {
@@ -22,6 +29,10 @@
     min-height: 505px;
     border: 3px solid $color-gold;
     padding-block: 40px;
+
+    @media (max-width: $breakpoint-tablet) {
+      line-height: 2;
+    }
 
     &-title {
       margin: 0;
