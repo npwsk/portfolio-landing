@@ -9,5 +9,6 @@
     "color-hex-length": "long",
     "font-family-name-quotes": "always-unless-keyword",
     "plugin/rational-order": true
-  }
+  },
+  "ignoreFiles": ["**/**/*.css"]
 }
