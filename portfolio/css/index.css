@@ -444,7 +444,9 @@ body {
   justify-content: center;
 }
 .portfolio__img {
-  max-width: 450px;
+  width: 450px;
+  max-width: 100%;
+  height: auto;
 }
 
 @media (max-width: 768px) {
@@ -563,6 +565,14 @@ body {
     min-height: 600px;
   }
 }
+@media (max-width: 480px) {
+  .contacts__container {
+    background-position: left;
+  }
+}
+.contacts__content {
+  max-width: 100%;
+}
 .contacts__title {
   margin-bottom: 40px;
   line-height: 2;
@@ -577,6 +587,7 @@ body {
   flex-direction: column;
   gap: 20px;
   width: 450px;
+  max-width: 100%;
 }
 .contacts__input, .contacts__textarea {
   padding: 5px 20px;

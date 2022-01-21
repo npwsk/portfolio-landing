@@ -19,6 +19,14 @@
       justify-content: center;
       min-height: 600px;
     }
+
+    @media (max-width: $breakpoint-mobile) {
+      background-position: left;
+    }
+  }
+
+  &__content {
+    max-width: 100%;
   }
 
   &__title {
@@ -35,6 +43,7 @@
     flex-direction: column;
     gap: 20px;
     width: 450px;
+    max-width: 100%;
   }
 
   &__input,
