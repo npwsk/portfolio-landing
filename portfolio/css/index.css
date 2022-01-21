@@ -85,11 +85,10 @@ body {
 }
 .link__svg {
   vertical-align: middle;
-}
-.link__svg, .link__svg-path {
   transition: all 0.2s ease-in-out;
+  fill: #ffffff;
 }
-.link--icon:hover .link__svg, .link--icon:hover .link__svg-path {
+.link--icon:hover .link__svg {
   fill: #bdae82;
 }
 
@@ -283,11 +282,10 @@ body {
 }
 .video-player__btn-svg {
   vertical-align: middle;
-}
-.video-player__btn-svg, .video-player__btn-path {
   transition: all 0.2s ease-in-out;
+  fill: #ffffff;
 }
-.video-player__btn:hover .video-player__btn-svg, .video-player__btn:hover .video-player__btn-path {
+.video-player__btn:hover .video-player__btn-svg {
   fill: #bdae82;
 }
 

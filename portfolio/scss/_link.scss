@@ -15,15 +15,11 @@
 
   &__svg {
     vertical-align: middle;
-  }
-
-  &__svg,
-  &__svg-path {
     transition: all 0.2s ease-in-out;
+    fill: $color-white;
   }
 
-  &--icon:hover &__svg,
-  &--icon:hover &__svg-path {
+  &--icon:hover &__svg {
     fill: $color-gold;
   }
 }

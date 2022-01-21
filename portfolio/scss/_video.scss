@@ -18,15 +18,11 @@
 
     &-svg {
       vertical-align: middle;
-    }
-
-    &-svg,
-    &-path {
       transition: all 0.2s ease-in-out;
+      fill: $color-white;
     }
 
-    &:hover &-svg,
-    &:hover &-path {
+    &:hover &-svg {
       fill: $color-gold;
     }
   }
