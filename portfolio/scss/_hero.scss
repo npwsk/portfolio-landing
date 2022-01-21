@@ -2,18 +2,22 @@
 
 .hero {
   &__content {
-    height: 910px;
     margin-top: -90px;
-    padding-top: 250px;
+    padding-block: 250px 330px;
     background-image: url("../img/bg.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-position: center top;
+    background-size: auto 910px;
 
     @media (max-width: $breakpoint-tablet) {
-      height: auto;
-      min-height: 590px;
-      padding-top: 168px;
+      padding-block: 168px 152px;
       background-image: url("../img/bg-touch.jpg");
+      background-position: center top;
+      background-size: auto 590px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      background-position: right top;
     }
   }
 
