@@ -360,11 +360,20 @@ body {
   padding-bottom: 2px;
   list-style: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .skills__list {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .skills__list {
     gap: 37px 44px;
     padding-bottom: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .skills__list {
+    grid-template-columns: 1fr;
   }
 }
 .skills__item {

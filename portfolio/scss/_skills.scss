@@ -20,10 +20,17 @@
     padding-bottom: 2px;
     list-style: none;
 
-    @media (max-width: $breakpoint-tablet) {
+    @media (max-width: $breakpoint-desktop) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-desktop-sm) {
       gap: 37px 44px;
       padding-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
     }
   }
 
