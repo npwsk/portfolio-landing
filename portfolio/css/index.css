@@ -194,7 +194,7 @@ body {
   margin-top: -90px;
   padding-top: 250px;
   padding-inline: 80px;
-  background: url("../img/bg.jpg") no-repeat 100%;
+  background: url("../assets/img/bg.jpg") no-repeat 100%;
 }
 .hero__name {
   margin: 0;
@@ -226,16 +226,16 @@ body {
   background-position: 50% 0;
 }
 .skills__item--icon--camera {
-  background-image: url("../img/icons/camera-icon.svg");
+  background-image: url("../assets/img/icons/camera-icon.svg");
 }
 .skills__item--icon--video {
-  background-image: url("../img/icons/video-icon.svg");
+  background-image: url("../assets/img/icons/video-icon.svg");
 }
 .skills__item--icon--image {
-  background-image: url("../img/icons/image-icon.svg");
+  background-image: url("../assets/img/icons/image-icon.svg");
 }
 .skills__item--icon--mic {
-  background-image: url("../img/icons/mic-icon.svg");
+  background-image: url("../assets/img/icons/mic-icon.svg");
 }
 .skills__item-title {
   margin: 0;
@@ -269,7 +269,7 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 1400/705;
-  background-image: url("../img/video-player.jpg");
+  background-image: url("../assets/img/video-player.jpg");
   background-size: cover;
 }
 .video-player__btn {
@@ -335,7 +335,7 @@ body {
   justify-content: flex-end;
   min-height: 700px;
   padding-top: 60px;
-  background-image: url("../img/contacts-bg.jpg");
+  background-image: url("../assets/img/contacts-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 100%;
