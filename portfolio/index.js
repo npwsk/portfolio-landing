@@ -1,3 +1,22 @@
+const navToggle = document.querySelector('.header__nav-toggle');
+const headerNav = document.querySelector('.header__nav');
+const navList = document.querySelector('.header__nav-list');
+
+navToggle.addEventListener('click', () => {
+  headerNav.classList.toggle('header__nav--active');
+  navToggle.classList.toggle('header__nav-toggle--active');
+  navList.classList.toggle('header__nav-list--active');
+});
+
+const navLinks = document.querySelectorAll('.header__nav-link');
+navLinks.forEach((link) =>
+  link.addEventListener('click', () => {
+    headerNav.classList.remove('header__nav--active');
+    navToggle.classList.remove('header__nav-toggle--active');
+    navList.classList.remove('header__nav-list--active');
+  })
+);
+
 console.log(`Score: 110 / 110
 1. Вёрстка валидная (10/10)
 2. Вёрстка семантическая (20/20)

@@ -1,11 +1,24 @@
 @use "variables" as *;
 
+.video {
+  &__container {
+    @media (max-width: $breakpoint-tablet) {
+      padding-inline: 0;
+    }
+  }
+}
+
 .video-player {
   position: relative;
   width: 100%;
   aspect-ratio: 1400 / 705;
   background-image: url("../assets/img/video-player.jpg");
   background-size: cover;
+
+  @media (max-width: $breakpoint-tablet) {
+    aspect-ratio: 768 / 418;
+    background-image: url("../img/video-player-tablet.jpg");
+  }
 
   &__btn {
     position: absolute;
@@ -20,6 +33,10 @@
       vertical-align: middle;
       transition: all 0.2s ease-in-out;
       fill: $color-white;
+
+      @media (max-width: $breakpoint-tablet) {
+        width: 64.62px;
+      }
     }
 
     &:hover &-svg {

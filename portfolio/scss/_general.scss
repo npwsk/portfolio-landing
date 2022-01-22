@@ -31,6 +31,10 @@ body {
   font-family: $font-main;
   line-height: 2;
   background-color: $color-dark;
+
+  @media (max-width: $breakpoint-tablet) {
+    line-height: 1.2;
+  }
 }
 
 .visually-hidden {
@@ -44,8 +48,8 @@ body {
 .container {
   margin-inline: auto;
   max-width: 1440px;
-  padding-inline: 20px;
-  overflow: hidden;
+  padding-inline: $paddinginline-container;
+  overflow-x: hidden;
 }
 
 .title {
@@ -53,18 +57,36 @@ body {
   color: $color-gold;
   font-size: 40px;
   font-family: $font-title;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 32px;
+  }
 }
 
 .section {
   padding-top: 100px;
 
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: 80px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-top: 30px;
+  }
+
   &__title {
     display: flex;
     gap: 20px;
     align-items: center;
-    width: 700px;
+    max-width: 700px;
     margin-inline: auto;
     margin-bottom: 60px;
+
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 364px;
+      margin-bottom: 50px;
+      line-height: 80px;
+    }
 
     &::before,
     &::after {

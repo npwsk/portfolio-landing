@@ -2,11 +2,23 @@
 
 .hero {
   &__content {
-    height: 910px;
     margin-top: -90px;
-    padding-top: 250px;
-    padding-inline: 80px;
-    background: url("../assets/img/bg.jpg") no-repeat 100%;
+    padding: 250px 80px 330px;
+    background-image: url("../assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto 910px;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding-block: 168px 152px;
+      background-image: url("../assets/img/bg-touch.jpg");
+      background-position: center top;
+      background-size: auto 590px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      background-position: right top;
+    }
   }
 
   &__name {
@@ -15,6 +27,17 @@
     font-weight: 700;
     font-size: 60px;
     font-family: $font-title;
+
+    @media (min-width: ($breakpoint-tablet + 1px)) {
+      margin-left: 60px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 20px;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 2;
+    }
   }
 
   &__about {
@@ -22,5 +45,20 @@
     margin: 0;
     margin-bottom: 25px;
     font-size: 20px;
+
+    @media (min-width: ($breakpoint-tablet + 1px)) {
+      margin-left: 60px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 390px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__btn {
+    @media (min-width: ($breakpoint-tablet + 1px)) {
+      margin-left: 60px;
+    }
   }
 }

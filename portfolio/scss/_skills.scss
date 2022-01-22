@@ -1,4 +1,16 @@
+@use "variables" as *;
+@use "general" as *;
+
 .skills {
+  &__title {
+    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+    @extend .section__title;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 45px;
+    }
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -7,6 +19,19 @@
     padding: 0;
     padding-bottom: 2px;
     list-style: none;
+
+    @media (max-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-desktop-sm) {
+      gap: 37px 44px;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -14,6 +39,10 @@
     text-align: center;
     background-repeat: no-repeat;
     background-position: 50% 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: 80px 10px 40px;
+    }
 
     &--icon {
       &--camera {
@@ -38,9 +67,17 @@
     margin: 0;
     margin-bottom: 20px;
     font-size: 20px;
+
+    @media (max-width: $breakpoint-tablet) {
+      line-height: 2;
+    }
   }
 
   &__item-text {
     margin: 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      line-height: 21.78px;
+    }
   }
 }

@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .footer {
   font-size: 20px;
 
@@ -6,6 +8,14 @@
     display: flex;
     justify-content: space-between;
     padding-block: 50px;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding-block: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
   }
 
   &__copyright {
@@ -14,14 +24,20 @@
   }
 
   &__rs-school {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    @media (min-width: ($breakpoint-tablet + 1px)) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__copyright,
   &__rs-school {
     line-height: 2.5;
+
+    @media (max-width: $breakpoint-tablet) {
+      line-height: 24px;
+    }
   }
 
   &__socials {
@@ -31,6 +47,11 @@
       margin: 0;
       padding: 0;
       list-style: none;
+
+      @media (max-width: $breakpoint-tablet) {
+        margin-top: 4px;
+        padding-block: 9px;
+      }
     }
 
     &-item {
