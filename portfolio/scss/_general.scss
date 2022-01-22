@@ -48,7 +48,7 @@ body {
 .container {
   margin-inline: auto;
   max-width: 1440px;
-  padding-inline: $paddinginline-container;
+  padding-inline: var(--paddinginline-container);
   overflow-x: hidden;
 }
 
