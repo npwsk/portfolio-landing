@@ -458,7 +458,7 @@ body {
 @media (max-width: 768px) {
   .video-player {
     aspect-ratio: 768/418;
-    background-image: url("../img/video-player-tablet.jpg");
+    background-image: url("../assets/img/video-player-tablet.jpg");
   }
 }
 .video-player__btn {
