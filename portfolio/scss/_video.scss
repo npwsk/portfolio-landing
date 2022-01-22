@@ -12,7 +12,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1400 / 705;
-  background-image: url("../img/video-player.jpg");
+  background-image: url("../assets/img/video-player.jpg");
   background-size: cover;
 
   @media (max-width: $breakpoint-tablet) {
@@ -31,19 +31,15 @@
 
     &-svg {
       vertical-align: middle;
+      transition: all 0.2s ease-in-out;
+      fill: $color-white;
 
       @media (max-width: $breakpoint-tablet) {
         width: 64.62px;
       }
     }
 
-    &-svg,
-    &-path {
-      transition: all 0.2s ease-in-out;
-    }
-
-    &:hover &-svg,
-    &:hover &-path {
+    &:hover &-svg {
       fill: $color-gold;
     }
   }

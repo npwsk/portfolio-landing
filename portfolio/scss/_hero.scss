@@ -3,15 +3,15 @@
 .hero {
   &__content {
     margin-top: -90px;
-    padding-block: 250px 330px;
-    background-image: url("../img/bg.jpg");
+    padding: 250px 80px 330px;
+    background-image: url("../assets/img/bg.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto 910px;
 
     @media (max-width: $breakpoint-tablet) {
       padding-block: 168px 152px;
-      background-image: url("../img/bg-touch.jpg");
+      background-image: url("../assets/img/bg-touch.jpg");
       background-position: center top;
       background-size: auto 590px;
     }
