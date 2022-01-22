@@ -50,11 +50,6 @@ body {
   padding-inline: 20px;
   overflow-x: hidden;
 }
-@media (max-width: 768px) {
-  .container {
-    padding-inline: 60px;
-  }
-}
 
 .title {
   margin: 0;
@@ -74,6 +69,11 @@ body {
 @media (max-width: 768px) {
   .section {
     padding-top: 80px;
+  }
+}
+@media (max-width: 480px) {
+  .section {
+    padding-top: 30px;
   }
 }
 .section__title, .skills__title {
@@ -235,13 +235,13 @@ body {
     width: 100%;
     max-width: 620px;
     height: 100vh;
-    padding: 134px 64px 20px 127px;
+    padding: 134px 64px 20px min(20%, 127px);
     background-color: #000000;
     transition: all 0.3s ease-in-out;
   }
   .header__nav-toggle {
     position: absolute;
-    right: 64px;
+    right: 24px;
     z-index: 1;
     display: flex;
     flex-direction: column;

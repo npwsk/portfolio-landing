@@ -48,12 +48,8 @@ body {
 .container {
   margin-inline: auto;
   max-width: 1440px;
-  padding-inline: 20px;
+  padding-inline: $paddinginline-container;
   overflow-x: hidden;
-
-  @media (max-width: $breakpoint-tablet) {
-    padding-inline: 60px;
-  }
 }
 
 .title {
@@ -72,6 +68,10 @@ body {
 
   @media (max-width: $breakpoint-tablet) {
     padding-top: 80px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-top: 30px;
   }
 
   &__title {
