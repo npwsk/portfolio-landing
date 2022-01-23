@@ -70,12 +70,13 @@
     &__nav {
       position: absolute;
       top: 0;
-      right: -100%;
+      right: 0;
       width: 100%;
       max-width: 620px;
       height: 100vh;
       padding: 134px 64px 20px min(20%, 127px);
       background-color: $color-dark;
+      transform: translateX(100%);
       transition: all 0.3s ease-in-out;
     }
 
@@ -105,7 +106,8 @@
     }
 
     &__nav--active {
-      right: 0;
+      // right: 0;
+      transform: translateX(0);
       transition: all 0.3s ease-in-out;
     }
 

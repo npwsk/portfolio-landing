@@ -21,11 +21,13 @@ select {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
   color: $color-white;
   font-size: 18px;
   font-family: $font-main;
@@ -49,7 +51,6 @@ body {
   margin-inline: auto;
   max-width: 1440px;
   padding-inline: var(--paddinginline-container);
-  overflow-x: hidden;
 }
 
 .title {
