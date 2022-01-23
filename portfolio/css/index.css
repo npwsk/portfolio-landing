@@ -1,3 +1,12 @@
+:root {
+  --paddinginline-container: 20px;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --paddinginline-container: 60px;
+  }
+}
 *,
 *::before,
 *::after {
@@ -19,11 +28,13 @@ select {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
   color: #ffffff;
   font-size: 18px;
   font-family: "Inter", sans-serif;
@@ -47,8 +58,7 @@ body {
 .container {
   margin-inline: auto;
   max-width: 1440px;
-  padding-inline: 20px;
-  overflow-x: hidden;
+  padding-inline: var(--paddinginline-container);
 }
 
 .title {
@@ -230,17 +240,18 @@ body {
   .header__nav {
     position: absolute;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 100%;
     max-width: 620px;
     height: 100vh;
     padding: 134px 64px 20px min(20%, 127px);
     background-color: #000000;
+    transform: translateX(100%);
     transition: all 0.3s ease-in-out;
   }
   .header__nav-toggle {
     position: absolute;
-    right: 24px;
+    right: calc(var(--paddinginline-container) + 4px);
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -261,7 +272,7 @@ body {
     margin-left: auto;
   }
   .header__nav--active {
-    right: 0;
+    transform: translateX(0);
     transition: all 0.3s ease-in-out;
   }
   .header__nav-toggle--active {
@@ -293,7 +304,7 @@ body {
 }
 @media (max-width: 768px) {
   .hero__content {
-    padding-block: 168px 152px;
+    padding: 168px 60px 152px;
     background-image: url("../assets/img/bg-touch.jpg");
     background-position: center top;
     background-size: auto 590px;
@@ -311,11 +322,6 @@ body {
   font-size: 60px;
   font-family: "Merriweather", serif;
 }
-@media (min-width: 769px) {
-  .hero__name {
-    margin-left: 60px;
-  }
-}
 @media (max-width: 768px) {
   .hero__name {
     margin-bottom: 20px;
@@ -330,20 +336,10 @@ body {
   margin-bottom: 25px;
   font-size: 20px;
 }
-@media (min-width: 769px) {
-  .hero__about {
-    margin-left: 60px;
-  }
-}
 @media (max-width: 768px) {
   .hero__about {
     max-width: 390px;
     margin-bottom: 60px;
-  }
-}
-@media (min-width: 769px) {
-  .hero__btn {
-    margin-left: 60px;
   }
 }
 
@@ -464,7 +460,7 @@ body {
 @media (max-width: 768px) {
   .video-player {
     aspect-ratio: 768/418;
-    background-image: url("../img/video-player-tablet.jpg");
+    background-image: url("../assets/img/video-player-tablet.jpg");
   }
 }
 .video-player__btn {

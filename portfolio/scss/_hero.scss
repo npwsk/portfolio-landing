@@ -10,7 +10,7 @@
     background-size: auto 910px;
 
     @media (max-width: $breakpoint-tablet) {
-      padding-block: 168px 152px;
+      padding: 168px 60px 152px;
       background-image: url("../assets/img/bg-touch.jpg");
       background-position: center top;
       background-size: auto 590px;
@@ -28,10 +28,6 @@
     font-size: 60px;
     font-family: $font-title;
 
-    @media (min-width: ($breakpoint-tablet + 1px)) {
-      margin-left: 60px;
-    }
-
     @media (max-width: $breakpoint-tablet) {
       margin-bottom: 20px;
       font-weight: 400;
@@ -46,19 +42,9 @@
     margin-bottom: 25px;
     font-size: 20px;
 
-    @media (min-width: ($breakpoint-tablet + 1px)) {
-      margin-left: 60px;
-    }
-
     @media (max-width: $breakpoint-tablet) {
       max-width: 390px;
       margin-bottom: 60px;
-    }
-  }
-
-  &__btn {
-    @media (min-width: ($breakpoint-tablet + 1px)) {
-      margin-left: 60px;
     }
   }
 }
