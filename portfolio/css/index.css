@@ -236,6 +236,9 @@ body {
   background-color: #ffffff;
   transition: all 0.3s ease-in-out;
 }
+.header__nav-toggle:hover .header__toggle-bar {
+  background-color: #bdae82;
+}
 @media (max-width: 768px) {
   .header__nav {
     position: absolute;

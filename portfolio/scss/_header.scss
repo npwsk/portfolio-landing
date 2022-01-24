@@ -66,6 +66,10 @@
     transition: all 0.3s ease-in-out;
   }
 
+  &__nav-toggle:hover &__toggle-bar {
+    background-color: $color-gold;
+  }
+
   @media (max-width: $breakpoint-tablet) {
     &__nav {
       position: absolute;
