@@ -71,13 +71,11 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 100%;
-      max-width: 620px;
+      width: 100vw;
       height: 100vh;
-      padding: 134px 64px 20px min(20%, 127px);
-      background-color: $color-dark;
-      transform: translateX(100%);
-      transition: all 0.3s ease-in-out;
+      background: rgba(0 0 0 / 0%);
+      visibility: hidden;
+      transition: 0.1s;
     }
 
     &__nav-toggle {
@@ -93,11 +91,20 @@
     }
 
     &__nav-list {
-      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
       flex-direction: column;
       gap: 16px;
+      width: 100%;
+      max-width: 620px;
+      height: 100vh;
+      padding: 134px 64px 20px min(20%, 127px);
       font-size: 34.8235px;
       line-height: 73px;
+      background-color: $color-dark;
+      transform: translateX(100%);
+      transition: all 0.3s ease-in-out;
     }
 
     &__lang-toggler {
@@ -106,7 +113,13 @@
     }
 
     &__nav--active {
-      // right: 0;
+      width: 100vw;
+      background: rgba(0 0 0 / 50%);
+      visibility: visible;
+      transition: 0.1s;
+    }
+
+    &__nav--active &__nav-list {
       transform: translateX(0);
       transition: all 0.3s ease-in-out;
     }
