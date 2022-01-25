@@ -4,6 +4,22 @@
 .header {
   position: relative;
 
+  &__container {
+    background-image: url("../assets/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto 910px;
+
+    @media (max-width: $breakpoint-tablet) {
+      background-image: url("../assets/img/bg-touch.jpg");
+      background-size: auto 590px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      background-position-x: left;
+    }
+  }
+
   &__content {
     display: flex;
     gap: 31px;
