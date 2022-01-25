@@ -108,6 +108,11 @@ body {
   height: 2px;
   background-color: #bdae82;
 }
+@media (max-width: 480px) {
+  .section__title::before, .skills__title::before, .section__title::after, .skills__title::after {
+    height: 0;
+  }
+}
 
 .link {
   color: #ffffff;
