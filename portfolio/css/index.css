@@ -241,7 +241,7 @@ body {
 }
 @media (max-width: 768px) {
   .header__nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 100vw;
@@ -262,7 +262,7 @@ body {
     cursor: pointer;
   }
   .header__nav-list {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     flex-direction: column;
@@ -292,6 +292,7 @@ body {
     transition: all 0.3s ease-in-out;
   }
   .header__nav-toggle--active {
+    position: fixed;
     align-self: flex-end;
   }
   .header__nav-toggle--active .header__toggle-bar:nth-child(1) {

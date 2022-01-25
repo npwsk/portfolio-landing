@@ -72,7 +72,7 @@
 
   @media (max-width: $breakpoint-tablet) {
     &__nav {
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
       width: 100vw;
@@ -95,7 +95,7 @@
     }
 
     &__nav-list {
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
       flex-direction: column;
@@ -129,6 +129,7 @@
     }
 
     &__nav-toggle--active {
+      position: fixed;
       align-self: flex-end;
 
       .header__toggle-bar:nth-child(1) {
