@@ -22,6 +22,23 @@ navToggle.addEventListener('click', () => toggleNav(navToggle, headerNav));
 const navLinks = document.querySelectorAll('.header__nav-link');
 navLinks.forEach((link) => link.addEventListener('click', () => toggleNav(navToggle, headerNav)));
 
+function handlePortfolioTabClick(e) {
+  if (e.target.classList.contains('tab-btn')) {
+    const season = e.target.dataset.season;
+    const images = document.querySelectorAll('.portfolio__img');
+    images.forEach((image, index) => {
+      image.src = `./assets/img/${season}/${index + 1}.jpg`;
+    });
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach((tab) => tab.classList.remove('tab-btn--active'));
+    e.target.classList.add('tab-btn--active');
+  }
+}
+
+const portfolioTabs = document.querySelector('.portfolio__tabs');
+portfolioTabs.addEventListener('click', handlePortfolioTabClick);
+
 console.log(`Самооценка: 85 / 85
 1. Вёрстка соответствует макету. Ширина экрана 768px (48/48)
   - [x] блок <header> (6)
