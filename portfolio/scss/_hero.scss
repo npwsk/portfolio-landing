@@ -1,23 +1,25 @@
 @use "variables" as *;
 
 .hero {
-  &__content {
-    margin-top: -90px;
-    padding: 250px 80px 330px;
+  &__container {
+    min-height: 880px;
+    padding-top: 250px;
+    padding-inline: 80px;
     background-image: url("../assets/img/bg.jpg");
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center -90px;
     background-size: auto 910px;
 
     @media (max-width: $breakpoint-tablet) {
-      padding: 168px 60px 152px;
+      min-height: 500px;
+      padding: 78px 60px 20px;
       background-image: url("../assets/img/bg-touch.jpg");
-      background-position: center top;
       background-size: auto 590px;
     }
 
     @media (max-width: $breakpoint-mobile) {
-      background-position: right top;
+      background-position-x: left;
+      padding-inline: 40px;
     }
   }
 

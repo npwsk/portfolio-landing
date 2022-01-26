@@ -109,6 +109,11 @@ body {
   height: 2px;
   background-color: #bdae82;
 }
+@media (max-width: 480px) {
+  .section__title::before, .skills__title::before, .section__title::after, .skills__title::after {
+    height: 0;
+  }
+}
 
 .link {
   color: #ffffff;
@@ -184,6 +189,23 @@ body {
 
 .header {
   position: relative;
+}
+.header__container {
+  background-image: url("../assets/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: auto 910px;
+}
+@media (max-width: 768px) {
+  .header__container {
+    background-image: url("../assets/img/bg-touch.jpg");
+    background-size: auto 590px;
+  }
+}
+@media (max-width: 480px) {
+  .header__container {
+    background-position-x: left;
+  }
 }
 .header__content {
   display: flex;
@@ -305,25 +327,27 @@ body {
   }
 }
 
-.hero__content {
-  margin-top: -90px;
-  padding: 250px 80px 330px;
+.hero__container {
+  min-height: 880px;
+  padding-top: 250px;
+  padding-inline: 80px;
   background-image: url("../assets/img/bg.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center -90px;
   background-size: auto 910px;
 }
 @media (max-width: 768px) {
-  .hero__content {
-    padding: 168px 60px 152px;
+  .hero__container {
+    min-height: 500px;
+    padding: 78px 60px 20px;
     background-image: url("../assets/img/bg-touch.jpg");
-    background-position: center top;
     background-size: auto 590px;
   }
 }
 @media (max-width: 480px) {
-  .hero__content {
-    background-position: right top;
+  .hero__container {
+    background-position-x: left;
+    padding-inline: 40px;
   }
 }
 .hero__name {
