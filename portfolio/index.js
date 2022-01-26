@@ -1,21 +1,26 @@
+const html = document.documentElement;
+const body = document.body;
+
 const navToggle = document.querySelector('.header__nav-toggle');
 const headerNav = document.querySelector('.header__nav');
-const navList = document.querySelector('.header__nav-list');
 
-navToggle.addEventListener('click', () => {
+const toggleNav = (toggle, nav) => {
   headerNav.classList.toggle('header__nav--active');
-  navToggle.classList.toggle('header__nav-toggle--active');
-  navList.classList.toggle('header__nav-list--active');
-});
+  toggle.classList.toggle('header__nav-toggle--active');
+
+  if (nav.classList.contains('header__nav--active')) {
+    body.style.overflow = 'hidden';
+    html.style.overflow = 'hidden';
+  } else {
+    body.style.overflow = 'auto';
+    html.style.overflow = 'auto';
+  }
+};
+
+navToggle.addEventListener('click', () => toggleNav(navToggle, headerNav));
 
 const navLinks = document.querySelectorAll('.header__nav-link');
-navLinks.forEach((link) =>
-  link.addEventListener('click', () => {
-    headerNav.classList.remove('header__nav--active');
-    navToggle.classList.remove('header__nav-toggle--active');
-    navList.classList.remove('header__nav-list--active');
-  })
-);
+navLinks.forEach((link) => link.addEventListener('click', () => toggleNav(navToggle, headerNav)));
 
 console.log(`Самооценка: 85 / 85
 1. Вёрстка соответствует макету. Ширина экрана 768px (48/48)

@@ -75,11 +75,11 @@
       position: fixed;
       top: 0;
       right: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0 0 0 / 0%);
-      visibility: hidden;
-      transition: 0.1s;
+      z-index: -1;
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+      height: 100%;
     }
 
     &__nav-toggle {
@@ -95,20 +95,19 @@
     }
 
     &__nav-list {
-      position: fixed;
-      top: 0;
-      right: 0;
       flex-direction: column;
       gap: 16px;
       width: 100%;
       max-width: 620px;
-      height: 100vh;
-      padding: 134px 64px 20px min(20%, 127px);
+      height: 100%;
+      padding-block: 134px 20px;
+      padding-inline: min(20%, 127px) 64px;
+      overflow: auto;
       font-size: 34.8235px;
       line-height: 73px;
       background-color: $color-dark;
       transform: translateX(100%);
-      transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease;
     }
 
     &__lang-toggler {
@@ -117,15 +116,12 @@
     }
 
     &__nav--active {
-      width: 100vw;
+      z-index: 0;
       background: rgba(0 0 0 / 50%);
-      visibility: visible;
-      transition: 0.1s;
     }
 
     &__nav--active &__nav-list {
       transform: translateX(0);
-      transition: all 0.3s ease-in-out;
     }
 
     &__nav-toggle--active {
@@ -145,10 +141,6 @@
         height: 2px;
         transform: scale(0.9) scale(math.sqrt(2)) translateY(-10px) rotate(-45deg);
       }
-    }
-
-    &__nav-list--active {
-      display: flex;
     }
   }
 }
