@@ -328,8 +328,8 @@ body {
 }
 
 .hero__container {
-  min-height: 880px;
-  padding-top: 250px;
+  min-height: 820px;
+  padding-top: 160px;
   padding-inline: 80px;
   background-image: url("../assets/img/bg.jpg");
   background-repeat: no-repeat;
