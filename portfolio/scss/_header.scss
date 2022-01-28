@@ -41,7 +41,7 @@
     list-style: none;
   }
 
-  &__lang-toggler {
+  &__lang-toggle {
     display: flex;
     gap: 9px;
     margin-right: -1px;
@@ -126,7 +126,7 @@
       transition: transform 0.3s ease;
     }
 
-    &__lang-toggler {
+    &__lang-toggle {
       margin-right: 74px;
       margin-left: auto;
     }

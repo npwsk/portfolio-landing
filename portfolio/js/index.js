@@ -1,43 +1,48 @@
-const html = document.documentElement;
-const body = document.body;
+import i18 from './translate.js';
+import toggleNav from './nav.js';
+import handleGalleryTabClick from './gallery.js';
 
 const navToggle = document.querySelector('.header__nav-toggle');
-const headerNav = document.querySelector('.header__nav');
+navToggle.addEventListener('click', toggleNav);
 
-const toggleNav = (toggle, nav) => {
-  headerNav.classList.toggle('header__nav--active');
-  toggle.classList.toggle('header__nav-toggle--active');
+const navLinks = document.querySelectorAll('.header__nav-link');
+navLinks.forEach((link) => link.addEventListener('click', toggleNav));
 
-  if (nav.classList.contains('header__nav--active')) {
-    body.style.overflow = 'hidden';
-    html.style.overflow = 'hidden';
-  } else {
-    body.style.overflow = 'auto';
-    html.style.overflow = 'auto';
+const portfolioTabs = document.querySelector('.portfolio__tabs');
+portfolioTabs.addEventListener('click', handleGalleryTabClick);
+
+const translate = (lang, i18n) => {
+  // console.log(lang, i18n, i18n[lang]);
+  if (!i18n[lang]) {
+    return;
+  }
+
+  const items = document.querySelectorAll('[data-i18n]');
+  items.forEach((item) => {
+    if (item.dataset.i18n in i18n[lang]) {
+      if (item.placeholder) {
+        item.placeholder = i18n[lang][item.dataset.i18n];
+        item.textContent = '';
+        return;
+      }
+      item.textContent = i18n[lang][item.dataset.i18n];
+    }
+  });
+};
+
+const handleLangeToggle = (e) => {
+  if (e.target.classList.contains('header__lang-btn')) {
+    const { lang } = e.target.dataset;
+    translate(lang, i18);
+
+    const langButtons = document.querySelector('.header__lang-btn');
+    langButtons.classList.remove('header__lang-btn--active');
+    e.target.classList.add('header__lang-btn--active');
   }
 };
 
-navToggle.addEventListener('click', () => toggleNav(navToggle, headerNav));
-
-const navLinks = document.querySelectorAll('.header__nav-link');
-navLinks.forEach((link) => link.addEventListener('click', () => toggleNav(navToggle, headerNav)));
-
-function handlePortfolioTabClick(e) {
-  if (e.target.classList.contains('tab-btn')) {
-    const season = e.target.dataset.season;
-    const images = document.querySelectorAll('.portfolio__img');
-    images.forEach((image, index) => {
-      image.src = `./assets/img/${season}/${index + 1}.jpg`;
-    });
-
-    const tabs = document.querySelectorAll('.tab-btn');
-    tabs.forEach((tab) => tab.classList.remove('tab-btn--active'));
-    e.target.classList.add('tab-btn--active');
-  }
-}
-
-const portfolioTabs = document.querySelector('.portfolio__tabs');
-portfolioTabs.addEventListener('click', handlePortfolioTabClick);
+const langToggle = document.querySelector('.header__lang-toggle');
+langToggle.addEventListener('click', handleLangeToggle);
 
 console.log(`Самооценка: 85 / 85
 1. Вёрстка соответствует макету. Ширина экрана 768px (48/48)
