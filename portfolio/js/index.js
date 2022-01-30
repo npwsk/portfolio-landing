@@ -35,8 +35,8 @@ const handleLangeToggle = (e) => {
     const { lang } = e.target.dataset;
     translate(lang, i18);
 
-    const langButtons = document.querySelector('.header__lang-btn');
-    langButtons.classList.remove('header__lang-btn--active');
+    const langButtons = document.querySelectorAll('.header__lang-btn');
+    langButtons.forEach((btn) => btn.classList.remove('header__lang-btn--active'));
     e.target.classList.add('header__lang-btn--active');
   }
 };
