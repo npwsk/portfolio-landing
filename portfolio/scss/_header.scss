@@ -5,13 +5,14 @@
   position: relative;
 
   &__container {
-    background-image: url("../assets/img/bg.jpg");
+    background-image: var(--bg-img-hero);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto 910px;
 
     @media (max-width: $breakpoint-tablet) {
-      background-image: url("../assets/img/bg-touch.jpg");
+      min-height: 90px;
+      background-image: var(--bg-img-hero-touch);
       background-size: auto 590px;
     }
 
@@ -22,72 +23,27 @@
 
   &__content {
     display: flex;
-    gap: 31px;
+    gap: 35px;
     align-items: center;
     padding-block: 20px;
+
+    @media (max-width: $breakpoint-tablet) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding-inline: var(--paddinginline-container) calc(var(--paddinginline-container) + 80px);
+      gap: 30px;
+      width: 100%;
+    }
   }
 
   &__nav {
     margin-left: auto;
     font-size: 20px;
     line-height: 50px;
-  }
 
-  &__nav-list {
-    display: flex;
-    gap: 31px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  &__lang-toggle {
-    display: flex;
-    gap: 9px;
-    margin-right: -1px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 50px;
-  }
-
-  &__lang-btn {
-    padding: 0;
-    color: $color-white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-
-    &:hover {
-      color: $color-gold;
-    }
-
-    &--active {
-      color: $color-gold;
-    }
-
-    &--active:hover {
-      color: $color-white;
-    }
-  }
-
-  &__nav-toggle {
-    display: none;
-  }
-
-  &__toggle-bar {
-    width: 100%;
-    height: 3px;
-    background-color: $color-white;
-    transition: all 0.3s ease-in-out;
-  }
-
-  &__nav-toggle:hover &__toggle-bar {
-    background-color: $color-gold;
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    &__nav {
+    @media (max-width: $breakpoint-tablet) {
       position: fixed;
       top: 0;
       right: 0;
@@ -97,20 +53,16 @@
       width: 100%;
       height: 100%;
     }
+  }
 
-    &__nav-toggle {
-      position: absolute;
-      right: calc(var(--paddinginline-container) + 4px);
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-    }
+  &__nav-list {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-    &__nav-list {
+    @media (max-width: $breakpoint-tablet) {
       flex-direction: column;
       gap: 16px;
       width: 100%;
@@ -121,19 +73,80 @@
       overflow: auto;
       font-size: 34.8235px;
       line-height: 73px;
-      background-color: $color-dark;
+      background-color: var(--color-bg);
       transform: translateX(100%);
       transition: transform 0.3s ease;
     }
+  }
 
-    &__lang-toggle {
-      margin-right: 74px;
+  &__nav-link:hover {
+    color: var(--color-nav-link-hover);
+
+    @media (max-width: $breakpoint-tablet) {
+      color: var(--color-link);
+    }
+  }
+
+  &__lang-toggle {
+    display: flex;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 50px;
+
+    @media (max-width: $breakpoint-tablet) {
       margin-left: auto;
     }
+  }
 
+  &__lang-btn {
+    padding: 0;
+    color: var(--color-lang);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in;
+
+    &:hover {
+      color: var(--color-lang-hover);
+    }
+
+    &--active {
+      color: var(--color-lang-active);
+    }
+  }
+
+  &__nav-toggle {
+    display: none;
+
+    @media (max-width: $breakpoint-tablet) {
+      position: absolute;
+      right: calc(var(--paddinginline-container) + 4px);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+
+  &__toggle-bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-link);
+    transition: transform 0.3s ease-in, height 0.3s ease-in, opacity 0.3s ease-in;
+  }
+
+  &__nav-toggle:hover &__toggle-bar {
+    background-color: $color-gold;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
     &__nav--active {
-      z-index: 0;
-      background: rgba(0 0 0 / 50%);
+      z-index: 1;
+      background: var(--color-nav-backdrop);
     }
 
     &__nav--active &__nav-list {

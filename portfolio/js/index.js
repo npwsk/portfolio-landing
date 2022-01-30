@@ -44,6 +44,16 @@ const handleLangeToggle = (e) => {
 const langToggle = document.querySelector('.header__lang-toggle');
 langToggle.addEventListener('click', handleLangeToggle);
 
+const themeToggle = document.querySelector('.header__theme-toggle');
+themeToggle.addEventListener('input', (e) => {
+  const isChecked = e.target.checked;
+  if (isChecked) {
+    document.body.classList.add('light-theme');
+  } else {
+    document.body.classList.remove('light-theme');
+  }
+});
+
 console.log(`Самооценка: 85 / 85
 1. Вёрстка соответствует макету. Ширина экрана 768px (48/48)
   - [x] блок <header> (6)

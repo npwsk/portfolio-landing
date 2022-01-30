@@ -63,6 +63,10 @@
             <span>/</span>
             <button class="header__lang-btn" type="button" data-lang="ru">ru</button>
           </div>
+          <div class="header__theme-toggle theme-toggle">
+            <input class="theme-toggle__checkbox" type="checkbox" id="theme-checkbox" />
+            <label class="theme-toggle__label" for="theme-checkbox"></label>
+          </div>
         </div>
       </div>
     </header>
@@ -117,27 +121,22 @@
 
           <ul class="portfolio__tabs">
             <li class="portfolio__tab">
-              <button class="tab-btn" type="button" data-season="winter" data-i18n="winter">
+              <button class="tab" type="button" data-season="winter" data-i18n="winter">
                 Winter
               </button>
             </li>
             <li class="portfolio__tab">
-              <button class="tab-btn" type="button" data-season="spring" data-i18n="spring">
+              <button class="tab" type="button" data-season="spring" data-i18n="spring">
                 Spring
               </button>
             </li>
             <li class="portfolio__tab">
-              <button class="tab-btn" type="button" data-season="summer" data-i18n="summer">
+              <button class="tab" type="button" data-season="summer" data-i18n="summer">
                 Summer
               </button>
             </li>
             <li class="portfolio__tab">
-              <button
-                class="tab-btn tab-btn--active"
-                type="button"
-                data-season="autumn"
-                data-i18n="autumn"
-              >
+              <button class="tab tab--active" type="button" data-season="autumn" data-i18n="autumn">
                 Autumn
               </button>
             </li>
@@ -219,7 +218,9 @@
                 <li data-i18n="price-description-1-item-4">Readiness 2-3 weeks</li>
                 <li data-i18n="price-description-1-item-5">Make up, visage</li>
               </ul>
-              <button class="button" type="button" data-i18n="order">Order shooting</button>
+              <button class="button button--secondary" type="button" data-i18n="order">
+                Order shooting
+              </button>
             </li>
             <li class="price__item">
               <h3 class="price__item-title">Premium</h3>
@@ -231,7 +232,9 @@
                 <li data-i18n="price-description-2-item-4">Readiness 1-2 weeks</li>
                 <li data-i18n="price-description-2-item-5">Make up, visage</li>
               </ul>
-              <button class="button" type="button" data-i18n="order">Order shooting</button>
+              <button class="button button--secondary" type="button" data-i18n="order">
+                Order shooting
+              </button>
             </li>
             <li class="price__item">
               <h3 class="price__item-title">Gold</h3>
@@ -243,7 +246,9 @@
                 <li data-i18n="price-description-3-item-4">Readiness 1 week</li>
                 <li data-i18n="price-description-3-item-5">Make up, visage, hairstyle</li>
               </ul>
-              <button class="button" type="button" data-i18n="order">Order shooting</button>
+              <button class="button button--secondary" type="button" data-i18n="order">
+                Order shooting
+              </button>
             </li>
           </ul>
         </div>
@@ -277,7 +282,7 @@
                 placeholder="Message"
               ></textarea>
               <input
-                class="contacts__submit button"
+                class="contacts__submit button button--main"
                 type="submit"
                 value="Send message"
                 data-i18n="send-message"

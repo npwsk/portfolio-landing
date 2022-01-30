@@ -5,7 +5,7 @@
     min-height: 820px;
     padding-top: 160px;
     padding-inline: 80px;
-    background-image: url("../assets/img/bg.jpg");
+    background-image: var(--bg-img-hero);
     background-repeat: no-repeat;
     background-position: center -90px;
     background-size: auto 910px;
@@ -13,7 +13,7 @@
     @media (max-width: $breakpoint-tablet) {
       min-height: 500px;
       padding: 78px 60px 20px;
-      background-image: url("../assets/img/bg-touch.jpg");
+      background-image: var(--bg-img-hero-touch);
       background-size: auto 590px;
     }
 
@@ -48,5 +48,9 @@
       max-width: 390px;
       margin-bottom: 60px;
     }
+  }
+
+  &__btn {
+    filter: drop-shadow(0 4px 4px rgba(0 0 0 / 25%));
   }
 }

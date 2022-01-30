@@ -1,9 +1,11 @@
 @use "variables" as *;
 
 .link {
-  color: $color-white;
+  color: var(--color-link);
   text-decoration: none;
-  transition: сolor 0.2s ease-in-out;
+  transition-timing-function: $transition-function-theme;
+  transition-duration: $transition-duration-theme;
+  transition-property: color;
 
   &:hover {
     color: $color-gold;
@@ -15,8 +17,10 @@
 
   &__svg {
     vertical-align: middle;
-    transition: all 0.2s ease-in-out;
-    fill: $color-white;
+    transition-timing-function: $transition-function-theme;
+    transition-duration: $transition-duration-theme;
+    transition-property: fill;
+    fill: var(--color-link);
   }
 
   &--icon:hover &__svg {
