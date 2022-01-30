@@ -1,18 +1,17 @@
 import i18 from './translate.js';
-import toggleNav from './nav.js';
+import { toggleNav, closeNav } from './nav.js';
 import handleGalleryTabClick from './gallery.js';
 
 const navToggle = document.querySelector('.header__nav-toggle');
 navToggle.addEventListener('click', toggleNav);
 
-const navLinks = document.querySelectorAll('.header__nav-link');
-navLinks.forEach((link) => link.addEventListener('click', toggleNav));
+const nav = document.querySelector('.header__nav');
+nav.addEventListener('click', closeNav);
 
 const portfolioTabs = document.querySelector('.portfolio__tabs');
 portfolioTabs.addEventListener('click', handleGalleryTabClick);
 
 const translate = (lang, i18n) => {
-  // console.log(lang, i18n, i18n[lang]);
   if (!i18n[lang]) {
     return;
   }
