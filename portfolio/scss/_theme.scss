@@ -21,16 +21,19 @@
   --color-btn-main-hover: #{$color-white};
   --color-bg-btn-main: #{$color-gold};
   --color-bg-btn-main-hover: #{$color-gold};
+  --color-bg-btn-main-active: #{$color-white};
   --color-btn-secondary: #{$color-black};
   --color-btn-secondary-hover: #{$color-white};
   --color-bg-btn-secondary: #{$color-gold};
   --color-bg-btn-secondary-hover: #{$color-gold};
+  --color-bg-btn-secondary-active: #{$color-white};
 
   // ------ Tabs ------
   --color-tab: #{$color-gold};
   --color-tab-hover: #{$color-white};
   --color-bg-tab: transparent;
   --color-bg-tab-hover: transparent;
+  --color-tab-circle: #{$color-gold};
   --color-tab-active: #{$color-black};
   --color-bg-tab-active: #{$color-gold};
 
@@ -65,16 +68,19 @@ body.light-theme {
   --color-btn-main-hover: #{$color-gold};
   --color-bg-btn-main: #{$color-white};
   --color-bg-btn-main-hover: #{$color-matteblack};
+  --color-bg-btn-main-active: #{$color-gold};
   --color-btn-secondary: #{$color-matteblack};
   --color-btn-secondary-hover: #{$color-gold};
   --color-bg-btn-secondary: #{$color-gold};
   --color-bg-btn-secondary-hover: #{$color-matteblack};
+  --color-bg-btn-secondary-active: #{$color-gold};
 
   // ------ Tabs ------
   --color-tab: #{$color-matteblack};
   --color-tab-hover: #{$color-gold};
   --color-bg-tab: #{$color-gold};
   --color-bg-tab-hover: #{$color-matteblack};
+  --color-tab-circle: #{$color-gold};
   --color-tab-active: #{$color-gold};
   --color-bg-tab-active: #{$color-matteblack};
 

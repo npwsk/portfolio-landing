@@ -2,6 +2,20 @@ import i18 from './translate.js';
 import { toggleNav, closeNav } from './nav.js';
 import handleGalleryTabClick from './gallery.js';
 
+// const app = () => {
+//   const state = {
+//     lang: localStorage.getItem('lang') || 'en',
+//     theme: localStorage.getItem('theme') || 'dark',
+//   };
+// };
+
+// function setLocalStorage() {
+//   localStorage.setItem('lang', lang);
+// }
+// window.addEventListener('beforeunload', setLocalStorage);
+
+// app();
+
 const navToggle = document.querySelector('.header__nav-toggle');
 navToggle.addEventListener('click', toggleNav);
 
@@ -46,12 +60,39 @@ langToggle.addEventListener('click', handleLangeToggle);
 const themeToggle = document.querySelector('.header__theme-toggle');
 themeToggle.addEventListener('input', (e) => {
   const isChecked = e.target.checked;
+
   if (isChecked) {
     document.body.classList.add('light-theme');
   } else {
     document.body.classList.remove('light-theme');
   }
 });
+
+const buttons = document.querySelectorAll('.button');
+const tabs = document.querySelectorAll('.tab');
+
+buttons.forEach((btn) => btn.addEventListener('click', (e) => addRippleCircle(e, 'button')));
+tabs.forEach((tab) => tab.addEventListener('click', (e) => addRippleCircle(e, 'tab')));
+
+function addRippleCircle(e, parentClass) {
+  const x = e.clientX + window.pageXOffset;
+  const y = e.clientY + window.pageYOffset;
+
+  const buttonTop = e.target.offsetTop;
+  const buttonLeft = e.target.offsetLeft;
+
+  const xInside = x - buttonLeft;
+  const yInside = y - buttonTop;
+
+  const circle = document.createElement('span');
+  circle.classList.add(`${parentClass}__circle`);
+  circle.style.top = yInside + 'px';
+  circle.style.left = xInside + 'px';
+
+  e.target.appendChild(circle);
+
+  setTimeout(() => circle.remove(), 500);
+}
 
 console.log(`Самооценка: 85 / 85
 1. Вёрстка соответствует макету. Ширина экрана 768px (48/48)

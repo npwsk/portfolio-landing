@@ -23,14 +23,17 @@
   --color-btn-main-hover: #ffffff;
   --color-bg-btn-main: #bdae82;
   --color-bg-btn-main-hover: #bdae82;
+  --color-bg-btn-main-active: #ffffff;
   --color-btn-secondary: #000000;
   --color-btn-secondary-hover: #ffffff;
   --color-bg-btn-secondary: #bdae82;
   --color-bg-btn-secondary-hover: #bdae82;
+  --color-bg-btn-secondary-active: #ffffff;
   --color-tab: #bdae82;
   --color-tab-hover: #ffffff;
   --color-bg-tab: transparent;
   --color-bg-tab-hover: transparent;
+  --color-tab-circle: #bdae82;
   --color-tab-active: #000000;
   --color-bg-tab-active: #bdae82;
   --color-nav-link-hover: #bdae82;
@@ -56,14 +59,17 @@ body.light-theme {
   --color-btn-main-hover: #bdae82;
   --color-bg-btn-main: #ffffff;
   --color-bg-btn-main-hover: #1c1c1c;
+  --color-bg-btn-main-active: #bdae82;
   --color-btn-secondary: #1c1c1c;
   --color-btn-secondary-hover: #bdae82;
   --color-bg-btn-secondary: #bdae82;
   --color-bg-btn-secondary-hover: #1c1c1c;
+  --color-bg-btn-secondary-active: #bdae82;
   --color-tab: #1c1c1c;
   --color-tab-hover: #bdae82;
   --color-bg-tab: #bdae82;
   --color-bg-tab-hover: #1c1c1c;
+  --color-tab-circle: #bdae82;
   --color-tab-active: #bdae82;
   --color-bg-tab-active: #1c1c1c;
   --color-nav-link-hover: #ffffff;
@@ -208,11 +214,13 @@ body {
 }
 
 .button {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 220px;
   height: 55px;
+  overflow: hidden;
   color: #000000;
   font-size: 20px;
   text-decoration: none;
@@ -226,9 +234,15 @@ body {
 .button:hover {
   color: #ffffff;
 }
-.button:active {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+.button__circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  -webkit-animation: scale 0.5s ease-out;
+          animation: scale 0.5s ease-out;
 }
 .button--main {
   color: var(--color-btn-main);
@@ -238,6 +252,9 @@ body {
   color: var(--color-btn-main-hover);
   background-color: var(--color-bg-btn-main-hover);
 }
+.button--main .button__circle {
+  background-color: var(--color-bg-btn-main-active);
+}
 .button--secondary {
   color: var(--color-btn-secondary);
   background-color: var(--color-bg-btn-secondary);
@@ -246,13 +263,31 @@ body {
   color: var(--color-btn-secondary-hover);
   background-color: var(--color-bg-btn-secondary-hover);
 }
+.button--secondary .button__circle {
+  background-color: var(--color-bg-btn-secondary-active);
+}
 
+@-webkit-keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
 .tab {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 220px;
   height: 55px;
+  overflow: hidden;
   color: var(--color-tab);
   font-size: 20px;
   text-decoration: none;
@@ -267,15 +302,27 @@ body {
   color: var(--color-tab-hover);
   background-color: var(--color-bg-tab-hover);
 }
-.tab:active {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+.tab__circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: var(--color-tab-circle);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  -webkit-animation: scale 0.5s ease-out;
+          animation: scale 0.5s ease-out;
 }
 .tab--active, .tab--active:hover {
   color: var(--color-tab-active);
   background-color: var(--color-bg-tab-active);
 }
 
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
 .header {
   position: relative;
 }

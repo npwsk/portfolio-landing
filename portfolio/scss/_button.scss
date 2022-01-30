@@ -1,11 +1,13 @@
 @use "variables" as *;
 
 .button {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 220px;
   height: 55px;
+  overflow: hidden;
   color: $color-black;
   font-size: 20px;
   text-decoration: none;
@@ -20,9 +22,14 @@
     color: $color-white;
   }
 
-  &:active {
-    background-image: linear-gradient(to bottom, rgba(0 0 0 / 5%) 0%, rgba(0 0 0 / 5%) 100%);
-    box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+  &__circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: $color-white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
   }
 
   &--main {
@@ -32,6 +39,10 @@
     &:hover {
       color: var(--color-btn-main-hover);
       background-color: var(--color-bg-btn-main-hover);
+    }
+
+    .button__circle {
+      background-color: var(--color-bg-btn-main-active);
     }
   }
 
@@ -43,5 +54,16 @@
       color: var(--color-btn-secondary-hover);
       background-color: var(--color-bg-btn-secondary-hover);
     }
+
+    .button__circle {
+      background-color: var(--color-bg-btn-secondary-active);
+    }
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
   }
 }

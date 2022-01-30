@@ -1,11 +1,13 @@
 @use "variables" as *;
 
 .tab {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 220px;
   height: 55px;
+  overflow: hidden;
   color: var(--color-tab);
   font-size: 20px;
   text-decoration: none;
@@ -21,14 +23,26 @@
     background-color: var(--color-bg-tab-hover);
   }
 
-  &:active {
-    background-image: linear-gradient(to bottom, rgba(0 0 0 / 5%) 0%, rgba(0 0 0 / 5%) 100%);
-    box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+  &__circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-tab-circle);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
   }
 
   &--active,
   &--active:hover {
     color: var(--color-tab-active);
     background-color: var(--color-bg-tab-active);
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
   }
 }
