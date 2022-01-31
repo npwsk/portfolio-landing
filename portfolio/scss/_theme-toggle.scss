@@ -23,5 +23,9 @@
 
   &__checkbox:checked ~ &__label {
     background-image: url("../assets/svg/theme-sprite.svg#moon");
+
+    &:hover {
+      filter: invert(74%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    }
   }
 }
