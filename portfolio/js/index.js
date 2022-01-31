@@ -1,4 +1,4 @@
-import { i18Obj, translateContent } from './translate.js';
+import { i18Obj, translateContent, updateActiveLang } from './translate.js';
 import { toggleNav, closeNav } from './nav.js';
 import handleGalleryTabClick from './gallery.js';
 import toggleTheme from './theme.js';
@@ -17,6 +17,7 @@ const getLocalStorage = () => {
   if (localStorage.getItem('lang')) {
     state.lang = localStorage.getItem('lang');
     translateContent(state.lang, i18Obj);
+    updateActiveLang(state.lang);
   }
   if (localStorage.getItem('theme')) {
     state.theme = localStorage.getItem('theme');
@@ -37,20 +38,15 @@ nav.addEventListener('click', closeNav);
 const portfolioTabs = document.querySelector('.portfolio__tabs');
 portfolioTabs.addEventListener('click', handleGalleryTabClick);
 
-const handleLangToggle = (e) => {
+const langToggle = document.querySelector('.header__lang-toggle');
+langToggle.addEventListener('click', (e) => {
   if (e.target.classList.contains('header__lang-btn')) {
     const { lang } = e.target.dataset;
     state.lang = lang;
     translateContent(lang, i18Obj);
-
-    const langButtons = document.querySelectorAll('.header__lang-btn');
-    langButtons.forEach((btn) => btn.classList.remove('header__lang-btn--active'));
-    e.target.classList.add('header__lang-btn--active');
+    updateActiveLang(lang);
   }
-};
-
-const langToggle = document.querySelector('.header__lang-toggle');
-langToggle.addEventListener('click', handleLangToggle);
+});
 
 const themeCheckbox = document.querySelector('.header__theme-toggle');
 
