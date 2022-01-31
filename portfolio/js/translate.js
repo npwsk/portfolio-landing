@@ -109,4 +109,12 @@ const translateContent = (lang, i18n) => {
   });
 };
 
-export { i18Obj, translateContent };
+const updateActiveLang = (lang) => {
+  const langButtons = document.querySelectorAll('.header__lang-btn');
+  langButtons.forEach((btn) => btn.classList.remove('header__lang-btn--active'));
+
+  const targetButton = [...langButtons].find((btn) => btn.dataset.lang === lang);
+  targetButton.classList.add('header__lang-btn--active');
+};
+
+export { i18Obj, translateContent, updateActiveLang };
