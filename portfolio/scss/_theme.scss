@@ -45,6 +45,7 @@
   --color-input-placeholder: #{$color-gold};
   --color-bg-input: rgba(0 0 0 / 50%);
   --color-border: #{$color-gold};
+  --color-bg-header-fixed: rgba(0 0 0 / 70%);
 }
 
 body.light-theme {
@@ -92,4 +93,5 @@ body.light-theme {
   --color-input-placeholder: #{$color-matteblack};
   --color-bg-input: rgba(255 255 255 / 50%);
   --color-border: #{$color-gold};
+  --color-bg-header-fixed: rgba(189 174 130 / 70%);
 }

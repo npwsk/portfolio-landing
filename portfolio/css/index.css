@@ -41,6 +41,7 @@
   --color-input-placeholder: #bdae82;
   --color-bg-input: rgba(0 0 0 / 50%);
   --color-border: #bdae82;
+  --color-bg-header-fixed: rgba(0 0 0 / 70%);
 }
 
 body.light-theme {
@@ -77,6 +78,7 @@ body.light-theme {
   --color-input-placeholder: #1c1c1c;
   --color-bg-input: rgba(255 255 255 / 50%);
   --color-border: #bdae82;
+  --color-bg-header-fixed: rgba(189 174 130 / 70%);
 }
 
 *,
@@ -355,6 +357,7 @@ body {
   gap: 35px;
   align-items: center;
   padding-block: 20px;
+  transition: background 0.3s ease-in;
 }
 @media (max-width: 768px) {
   .header__content {
@@ -365,6 +368,11 @@ body {
     padding-inline: var(--paddinginline-container) calc(var(--paddinginline-container) + 80px);
     gap: 30px;
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .header--fixed .header__content {
+    background-color: var(--color-bg-header-fixed);
   }
 }
 .header__nav {
