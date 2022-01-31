@@ -87,4 +87,26 @@ const i18Obj = {
   },
 };
 
-export default i18Obj;
+const translateContent = (lang, i18n) => {
+  if (!i18n[lang]) {
+    return;
+  }
+
+  const items = document.querySelectorAll('[data-i18n]');
+  items.forEach((item) => {
+    if (item.dataset.i18n in i18n[lang]) {
+      if (item.placeholder) {
+        item.placeholder = i18n[lang][item.dataset.i18n];
+        item.textContent = '';
+        return;
+      }
+      if (item.value) {
+        item.value = i18n[lang][item.dataset.i18n];
+        return;
+      }
+      item.textContent = i18n[lang][item.dataset.i18n];
+    }
+  });
+};
+
+export { i18Obj, translateContent };

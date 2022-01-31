@@ -1,20 +1,32 @@
-import i18 from './translate.js';
+import { i18Obj, translateContent } from './translate.js';
 import { toggleNav, closeNav } from './nav.js';
 import handleGalleryTabClick from './gallery.js';
+import toggleTheme from './theme.js';
 
-// const app = () => {
-//   const state = {
-//     lang: localStorage.getItem('lang') || 'en',
-//     theme: localStorage.getItem('theme') || 'dark',
-//   };
-// };
+const state = {
+  lang: 'en',
+  theme: 'dark',
+};
 
-// function setLocalStorage() {
-//   localStorage.setItem('lang', lang);
-// }
-// window.addEventListener('beforeunload', setLocalStorage);
+const setLocalStorage = () => {
+  localStorage.setItem('lang', state.lang);
+  localStorage.setItem('theme', state.theme);
+};
 
-// app();
+const getLocalStorage = () => {
+  if (localStorage.getItem('lang')) {
+    state.lang = localStorage.getItem('lang');
+    translateContent(state.lang, i18Obj);
+  }
+  if (localStorage.getItem('theme')) {
+    state.theme = localStorage.getItem('theme');
+    document.getElementById('theme-checkbox').checked = state.theme === 'light';
+    toggleTheme(state.theme);
+  }
+};
+
+window.addEventListener('load', getLocalStorage);
+window.addEventListener('beforeunload', setLocalStorage);
 
 const navToggle = document.querySelector('.header__nav-toggle');
 navToggle.addEventListener('click', toggleNav);
@@ -25,32 +37,10 @@ nav.addEventListener('click', closeNav);
 const portfolioTabs = document.querySelector('.portfolio__tabs');
 portfolioTabs.addEventListener('click', handleGalleryTabClick);
 
-const translate = (lang, i18n) => {
-  if (!i18n[lang]) {
-    return;
-  }
-
-  const items = document.querySelectorAll('[data-i18n]');
-  items.forEach((item) => {
-    if (item.dataset.i18n in i18n[lang]) {
-      if (item.placeholder) {
-        item.placeholder = i18n[lang][item.dataset.i18n];
-        item.textContent = '';
-        return;
-      }
-      if (item.value) {
-        item.value = i18n[lang][item.dataset.i18n];
-        return;
-      }
-      item.textContent = i18n[lang][item.dataset.i18n];
-    }
-  });
-};
-
-const handleLangeToggle = (e) => {
+const handleLangToggle = (e) => {
   if (e.target.classList.contains('header__lang-btn')) {
     const { lang } = e.target.dataset;
-    translate(lang, i18);
+    translateContent(lang, i18Obj);
 
     const langButtons = document.querySelectorAll('.header__lang-btn');
     langButtons.forEach((btn) => btn.classList.remove('header__lang-btn--active'));
@@ -59,17 +49,15 @@ const handleLangeToggle = (e) => {
 };
 
 const langToggle = document.querySelector('.header__lang-toggle');
-langToggle.addEventListener('click', handleLangeToggle);
+langToggle.addEventListener('click', handleLangToggle);
 
-const themeToggle = document.querySelector('.header__theme-toggle');
-themeToggle.addEventListener('input', (e) => {
+const themeCheckbox = document.querySelector('.header__theme-toggle');
+
+themeCheckbox.addEventListener('input', (e) => {
   const isChecked = e.target.checked;
-
-  if (isChecked) {
-    document.body.classList.add('light-theme');
-  } else {
-    document.body.classList.remove('light-theme');
-  }
+  const targetTheme = isChecked ? 'light' : 'dark';
+  state.theme = targetTheme;
+  toggleTheme(targetTheme);
 });
 
 const buttons = document.querySelectorAll('.button');
