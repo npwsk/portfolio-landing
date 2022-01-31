@@ -52,13 +52,16 @@
   &__input,
   &__textarea {
     padding: 5px 20px;
-    color: $color-white;
+    color: var(--color-text);
     font-size: 20px;
     line-height: 2;
     background: var(--color-bg-input);
     border: none;
     outline: 2px solid var(--color-border);
     outline-offset: -2px;
+    transition-timing-function: $transition-function-theme;
+    transition-duration: $transition-duration-theme;
+    transition-property: color, background;
   }
 
   &__input::placeholder,
@@ -66,6 +69,9 @@
     color: var(--color-input-placeholder);
     font-size: 20px;
     opacity: 1;
+    transition-timing-function: $transition-function-theme;
+    transition-duration: $transition-duration-theme;
+    transition-property: color;
   }
 
   &__textarea {
