@@ -1,6 +1,9 @@
+@use "css-variables";
+@use "theme";
 @use "general";
 @use "link";
 @use "button";
+@use "tab";
 @use "header";
 @use "hero";
 @use "skills";
@@ -9,3 +12,4 @@
 @use "price";
 @use "contacts";
 @use "footer";
+@use "theme-toggle";

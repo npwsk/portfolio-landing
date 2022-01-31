@@ -1,0 +1,48 @@
+@use "variables" as *;
+
+.tab {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 55px;
+  overflow: hidden;
+  color: var(--color-tab);
+  font-size: 20px;
+  text-decoration: none;
+  background-color: var(--color-bg-tab);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition-timing-function: $transition-function-theme;
+  transition-duration: $transition-duration-theme;
+  transition-property: color, background;
+
+  &:hover {
+    color: var(--color-tab-hover);
+    background-color: var(--color-bg-tab-hover);
+  }
+
+  &__circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-tab-circle);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
+  }
+
+  &--active,
+  &--active:hover {
+    color: var(--color-tab-active);
+    background-color: var(--color-bg-tab-active);
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}

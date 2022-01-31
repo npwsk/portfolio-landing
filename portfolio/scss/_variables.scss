@@ -1,8 +1,9 @@
 // ------ Colors -------
 
-$color-dark: #000000;
+$color-black: #000000;
 $color-gold: #bdae82;
 $color-white: #ffffff;
+$color-matteblack: #1c1c1c;
 
 // ------ Fonts -------
 
@@ -16,14 +17,7 @@ $breakpoint-desktop-sm: 992px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 480px;
 
-// ------ Gaps and paddings -------
+// ------ Theme transition -------
 
-:root {
-  --paddinginline-container: 20px;
-}
-
-@media (min-width: ($breakpoint-mobile + 1px)) and (max-width: $breakpoint-tablet) {
-  :root {
-    --paddinginline-container: 60px;
-  }
-}
+$transition-duration-theme: 0.3s;
+$transition-function-theme: ease-in;
