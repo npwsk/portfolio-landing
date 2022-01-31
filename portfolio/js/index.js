@@ -40,6 +40,7 @@ portfolioTabs.addEventListener('click', handleGalleryTabClick);
 const handleLangToggle = (e) => {
   if (e.target.classList.contains('header__lang-btn')) {
     const { lang } = e.target.dataset;
+    state.lang = lang;
     translateContent(lang, i18Obj);
 
     const langButtons = document.querySelectorAll('.header__lang-btn');
