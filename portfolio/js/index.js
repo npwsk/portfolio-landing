@@ -38,6 +38,10 @@ const translate = (lang, i18n) => {
         item.textContent = '';
         return;
       }
+      if (item.value) {
+        item.value = i18n[lang][item.dataset.i18n];
+        return;
+      }
       item.textContent = i18n[lang][item.dataset.i18n];
     }
   });
