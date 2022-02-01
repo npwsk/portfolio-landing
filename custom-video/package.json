@@ -1,0 +1,18 @@
+{
+  "name": "custom-video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "htmlhint": "^1.1.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-rational-order-plugin": "^1.0.2",
+    "stylelint-selector-bem-pattern": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
