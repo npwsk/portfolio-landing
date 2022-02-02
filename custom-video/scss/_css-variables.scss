@@ -1,0 +1,11 @@
+@use "variables" as *;
+
+:root {
+  // ------ Gaps and paddings -------
+
+  --paddinginline-container: 20px;
+
+  @media (min-width: ($breakpoint-mobile + 1px)) and (max-width: $breakpoint-tablet) {
+    --paddinginline-container: 60px;
+  }
+}

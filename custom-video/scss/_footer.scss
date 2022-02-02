@@ -1,0 +1,27 @@
+.footer {
+  &__content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__rsschool {
+    margin-left: auto;
+  }
+
+  &__rsschool-link {
+    padding: 5px;
+    background-color: var(--color-text);
+    box-shadow: 0 0 10px 0 rgba(255 255 255 / 70%);
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__rsschool-img {
+    display: block;
+  }
+}

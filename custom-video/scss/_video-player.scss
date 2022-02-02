@@ -1,0 +1,87 @@
+.video-player {
+  position: relative;
+  overflow: hidden;
+
+  &__video {
+    display: block;
+    width: 100%;
+  }
+
+  &__shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: box-shadow 0.3s ease-in;
+  }
+
+  &--pause &__shadow,
+  &:hover &__shadow {
+    box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0 0 0 / 50%);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  &--pause &__controls,
+  &:hover &__controls {
+    transform: translateY(0);
+  }
+
+  &__progress {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background: var(--color-video-progress);
+    cursor: pointer;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    transition-property: top, height;
+  }
+
+  &--pause &__progress,
+  &:hover &__progress {
+    top: -15px;
+    height: 15px;
+  }
+
+  &__progress-filled {
+    width: 20%;
+    height: 100%;
+    background-color: var(--color-video-progress-filled);
+  }
+
+  &__button {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+    background: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+
+    &--play {
+      background-image: url("../assets/svg/play.svg");
+    }
+
+    &--volume {
+      background-image: url("../assets/svg/volume.svg");
+    }
+  }
+}

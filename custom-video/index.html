@@ -8,12 +8,12 @@
     <title>custom-video</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
     <!-- 32×32 -->
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <!-- 180×180 -->
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="manifest" href="./manifest.webmanifest" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,13 +24,67 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
 
   <body>
-    <div class="video-player">
-      <video class="video-player__video" src="./assets/video/video.mp4"></video>
-      <div class="video-player__controls"></div>
-    </div>
+    <main class="main">
+      <div class="video__container container">
+        <h2 class="section__title title">Video</h2>
+        <div class="video-player">
+          <video class="video-player__video" src="./assets/video/video.mp4"></video>
+          <div class="video-player__shadow"></div>
+          <div class="video-player__controls">
+            <div class="video-player__progress">
+              <div class="video-player__progress-filled"></div>
+            </div>
+            <button class="video-player__button video-player__button--play" title="Play"></button>
+            <button class="video-player__button video-player__button--volume" title="Mute"></button>
+            <input
+              class="video-player__slider"
+              type="range"
+              name="volume"
+              min="0"
+              max="100"
+              step="1"
+              value="100"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__copy">©</div>
+          <div class="footer__year">2022</div>
+          <div class="footer__github">
+            <a
+              class="link"
+              href="https://github.com/npwsk"
+              target="_blank"
+              rel="noopener noreferrer"
+              >npwsk</a
+            >
+          </div>
+          <div class="footer__rsschool">
+            <a
+              class="footer__rsschool-link link"
+              href="https://rs.school/js-stage0/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="footer__rsschool-img"
+                src="https://rs.school/images/rs_school_js.svg"
+                alt="RS School"
+                width="100"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

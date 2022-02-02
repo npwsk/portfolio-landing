@@ -1,0 +1,30 @@
+@use "variables" as *;
+
+.link {
+  display: inline-block;
+  color: var(--color-link);
+  text-decoration: none;
+  transition-timing-function: $transition-function-theme;
+  transition-duration: $transition-duration-theme;
+  transition-property: color;
+
+  &:hover {
+    color: $color-gold;
+  }
+
+  &--icon {
+    display: block;
+  }
+
+  &__svg {
+    vertical-align: middle;
+    transition-timing-function: $transition-function-theme;
+    transition-duration: $transition-duration-theme;
+    transition-property: fill;
+    fill: var(--color-link);
+  }
+
+  &--icon:hover &__svg {
+    fill: $color-gold;
+  }
+}

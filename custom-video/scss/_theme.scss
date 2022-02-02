@@ -1,0 +1,99 @@
+@use "variables" as *;
+
+:root {
+  // ------ Background ------
+  --color-bg: #{$color-black};
+  --bg-img-hero: url("../assets/img/dark/hero-bg.jpg");
+  --bg-img-hero-touch: url("../assets/img/dark/hero-bg-touch.jpg");
+  --bg-img-contacts: url("../assets/img/dark/contacts-bg.jpg");
+
+  // ------ Text ------
+  --color-text: #{$color-white};
+  --color-title: #{$color-gold};
+  --color-link: #{$color-white};
+  --color-link-hover: #{$color-gold};
+  --color-lang: #{$color-white};
+  --color-lang-hover: #{$color-gold};
+  --color-lang-active: #{$color-gold};
+
+  // ------ Buttons ------
+  --color-btn-main: #{$color-black};
+  --color-btn-main-hover: #{$color-white};
+  --color-bg-btn-main: #{$color-gold};
+  --color-bg-btn-main-hover: #{$color-gold};
+  --color-bg-btn-main-active: #{$color-white};
+  --color-btn-secondary: #{$color-black};
+  --color-btn-secondary-hover: #{$color-white};
+  --color-bg-btn-secondary: #{$color-gold};
+  --color-bg-btn-secondary-hover: #{$color-gold};
+  --color-bg-btn-secondary-active: #{$color-white};
+
+  // ------ Tabs ------
+  --color-tab: #{$color-gold};
+  --color-tab-hover: #{$color-white};
+  --color-bg-tab: transparent;
+  --color-bg-tab-hover: transparent;
+  --color-tab-circle: #{$color-gold};
+  --color-tab-active: #{$color-black};
+  --color-bg-tab-active: #{$color-gold};
+
+  // ------ Nav ------
+  --color-nav-link-hover: #{$color-gold};
+  --color-nav-backdrop: rgba(0 0 0 / 50%);
+
+  // ------ Other ------
+  --color-input-placeholder: #{$color-gold};
+  --color-bg-input: rgba(0 0 0 / 50%);
+  --color-border: #{$color-gold};
+  --color-bg-header-fixed: rgba(0 0 0 / 70%);
+  --color-video-progress: rgba(255 255 255 / 20%);
+  --color-video-progress-filled: #{$color-gold};
+}
+
+body.light-theme {
+  // ------ Background ------
+  --color-bg: #{$color-white};
+  --bg-img-hero: url("../assets/img/light/hero-bg.jpg");
+  --bg-img-hero-touch: url("../assets/img/light/hero-bg-touch.jpg");
+  --bg-img-contacts: url("../assets/img/light/contacts-bg.jpg");
+
+  // ------ Text ------
+  --color-text: #{$color-matteblack};
+  --color-title: #{$color-matteblack};
+  --color-link: #{$color-matteblack};
+  --color-link-hover: #{$color-gold};
+  --color-lang: #{$color-matteblack};
+  --color-lang-hover: #{$color-white};
+  --color-lang-active: #{$color-white};
+
+  // ------ Buttons ------
+  --color-btn-main: #{$color-matteblack};
+  --color-btn-main-hover: #{$color-gold};
+  --color-bg-btn-main: #{$color-white};
+  --color-bg-btn-main-hover: #{$color-matteblack};
+  --color-bg-btn-main-active: #{$color-gold};
+  --color-btn-secondary: #{$color-matteblack};
+  --color-btn-secondary-hover: #{$color-gold};
+  --color-bg-btn-secondary: #{$color-gold};
+  --color-bg-btn-secondary-hover: #{$color-matteblack};
+  --color-bg-btn-secondary-active: #{$color-gold};
+
+  // ------ Tabs ------
+  --color-tab: #{$color-matteblack};
+  --color-tab-hover: #{$color-gold};
+  --color-bg-tab: #{$color-gold};
+  --color-bg-tab-hover: #{$color-matteblack};
+  --color-tab-circle: #{$color-gold};
+  --color-tab-active: #{$color-gold};
+  --color-bg-tab-active: #{$color-matteblack};
+
+  // ------ Navbar ------
+  --color-nav-link-hover: #{$color-white};
+  --color-nav-backdrop: rgba(0 0 0 / 30%);
+
+  // ------ Other ------
+  --color-input-placeholder: #{$color-matteblack};
+  --color-bg-input: rgba(255 255 255 / 50%);
+  --color-border: #{$color-gold};
+  --color-bg-header-fixed: rgba(189 174 130 / 70%);
+}
