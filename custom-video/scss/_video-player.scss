@@ -13,11 +13,15 @@
     left: 0;
     width: 100%;
     height: 100%;
+    box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
     transition: box-shadow 0.3s ease-in;
   }
 
-  &--pause &__shadow,
-  &:hover &__shadow {
+  &--playing &__shadow {
+    box-shadow: none;
+  }
+
+  &--playing:hover &__shadow {
     box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
   }
 
@@ -31,21 +35,24 @@
     width: 100%;
     padding: 20px;
     background-color: rgba(0 0 0 / 50%);
-    transform: translateY(100%);
+    transform: translateY(0);
     transition: transform 0.3s ease-in;
   }
 
-  &--pause &__controls,
-  &:hover &__controls {
+  &--playing &__controls {
+    transform: translateY(100%);
+  }
+
+  &--playing:hover &__controls {
     transform: translateY(0);
   }
 
   &__progress {
     position: absolute;
-    top: -5px;
+    top: -15px;
     right: 0;
     left: 0;
-    height: 5px;
+    height: 15px;
     background: var(--color-video-progress);
     cursor: pointer;
     transition-timing-function: ease-in;
@@ -53,8 +60,12 @@
     transition-property: top, height;
   }
 
-  &--pause &__progress,
-  &:hover &__progress {
+  &--playing &__progress {
+    top: -5px;
+    height: 5px;
+  }
+
+  &--playing:hover &__progress {
     top: -15px;
     height: 15px;
   }
@@ -75,13 +86,17 @@
     background-size: contain;
     border: none;
     cursor: pointer;
+  }
 
-    &--play {
-      background-image: url("../assets/svg/play.svg");
-    }
+  &__button--play {
+    background-image: url("../assets/svg/play.svg");
+  }
 
-    &--volume {
-      background-image: url("../assets/svg/volume.svg");
-    }
+  &--playing &__button--play {
+    background-image: url("../assets/svg/pause.svg");
+  }
+
+  &__button--volume {
+    background-image: url("../assets/svg/volume.svg");
   }
 }
