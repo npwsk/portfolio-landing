@@ -46,8 +46,8 @@
   --color-bg-input: rgba(0 0 0 / 50%);
   --color-border: #{$color-gold};
   --color-bg-header-fixed: rgba(0 0 0 / 70%);
-  --color-video-progress: rgba(255 255 255 / 20%);
-  --color-video-progress-filled: #{$color-gold};
+  --color-bg-video-progress: rgba(255 255 255 / 20%);
+  --color-video-progress: #{$color-gold};
 }
 
 body.light-theme {

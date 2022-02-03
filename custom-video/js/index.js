@@ -1,23 +1,39 @@
 const player = document.querySelector('.video-player');
 const video = player.querySelector('.video-player__video');
 const playButton = player.querySelector('.video-player__button--play');
+const progress = player.querySelector('.video-player__progress');
+const progressBar = player.querySelector('.video-player__progress-filled');
 
-const playVideo = async () => {
-  video
-    .play()
-    .then(() => player.classList.add('video-player--playing'))
-    .then(() => (playButton.title = 'Pause'))
-    .catch(() => player.classList.remove('video-player--playing'), (playButton.title = 'Play'));
-};
+const toggleVideoPlay = () => (video.paused ? video.play() : video.pause());
 
-const handlePlayButton = () => {
+const updatePlayer = () => {
   if (video.paused) {
-    playVideo();
-  } else {
-    video.pause();
     player.classList.remove('video-player--playing');
     playButton.title = 'Play';
+  } else {
+    player.classList.add('video-player--playing');
+    playButton.title = 'Pause';
   }
 };
 
-playButton.addEventListener('click', handlePlayButton);
+const scrub = (e) => {
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+};
+
+const progressLoop = () => {
+  progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+  requestAnimationFrame(progressLoop);
+};
+
+video.addEventListener('click', toggleVideoPlay);
+video.addEventListener('play', updatePlayer);
+video.addEventListener('pause', updatePlayer);
+playButton.addEventListener('click', toggleVideoPlay);
+
+video.addEventListener('play', () => requestAnimationFrame(progressLoop));
+let mousedown = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mouseup', () => (mousedown = false));
+progress.addEventListener('mousedown', () => (mousedown = true));

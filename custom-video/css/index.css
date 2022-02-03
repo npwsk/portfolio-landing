@@ -42,8 +42,8 @@
   --color-bg-input: rgba(0 0 0 / 50%);
   --color-border: #bdae82;
   --color-bg-header-fixed: rgba(0 0 0 / 70%);
-  --color-video-progress: rgba(255 255 255 / 20%);
-  --color-video-progress-filled: #bdae82;
+  --color-bg-video-progress: rgba(255 255 255 / 20%);
+  --color-video-progress: #bdae82;
 }
 
 body.light-theme {
@@ -224,6 +224,7 @@ body {
   height: 100%;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2) inset;
   transition: box-shadow 0.3s ease-in;
+  pointer-events: none;
 }
 .video-player--playing .video-player__shadow {
   box-shadow: none;
@@ -236,44 +237,46 @@ body {
   bottom: 0;
   z-index: 1;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
   align-items: center;
+  box-sizing: border-box;
   width: 100%;
-  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateY(0);
   transition: transform 0.3s ease-in;
 }
 .video-player--playing .video-player__controls {
-  transform: translateY(100%);
+  transform: translateY(100%) translateY(-5px);
 }
 .video-player--playing:hover .video-player__controls {
   transform: translateY(0);
 }
+.video-player__controls-inner {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
 .video-player__progress {
-  position: absolute;
-  top: -15px;
-  right: 0;
-  left: 0;
+  box-sizing: border-box;
+  width: 100%;
   height: 15px;
-  background: var(--color-video-progress);
+  background: var(--color-bg-video-progress);
+  border: none;
   cursor: pointer;
   transition-timing-function: ease-in;
   transition-duration: 0.3s;
-  transition-property: top, height;
+  transition-property: height;
+}
+.video-player__progress-filled {
+  width: 0;
+  height: 100%;
+  background-color: var(--color-video-progress);
 }
 .video-player--playing .video-player__progress {
-  top: -5px;
   height: 5px;
 }
 .video-player--playing:hover .video-player__progress {
-  top: -15px;
   height: 15px;
-}
-.video-player__progress-filled {
-  width: 20%;
-  height: 100%;
-  background-color: var(--color-video-progress-filled);
 }
 .video-player__button {
   width: 30px;
