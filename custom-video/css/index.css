@@ -1,9 +1,19 @@
 :root {
   --paddinginline-container: 20px;
+  --height-video-progress-fixed: 8px;
+  --height-video-controls: 60px;
+  --size-video-control-btn: 30px;
 }
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 768px) {
   :root {
     --paddinginline-container: 60px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --paddinginline-container: 20px;
+    --height-video-controls: 40px;
+    --size-video-control-btn: 20px;
   }
 }
 
@@ -216,13 +226,8 @@ body {
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  height: 60px;
+  height: var(--height-video-controls);
   background-color: black;
-}
-@media (max-width: 480px) {
-  .controls {
-    height: 40px;
-  }
 }
 .controls__inner {
   display: flex;
@@ -231,8 +236,8 @@ body {
   padding-inline: 30px;
 }
 .controls__btn {
-  min-width: 30px;
-  height: 30px;
+  min-width: var(--size-video-control-btn);
+  height: var(--size-video-control-btn);
   padding: 0;
   font: inherit;
   background: none;
@@ -241,12 +246,10 @@ body {
   background-size: contain;
   border: none;
   cursor: pointer;
+  transition: filter 0.1s ease-in;
 }
-@media (max-width: 480px) {
-  .controls__btn {
-    min-width: 20px;
-    height: 20px;
-  }
+.controls__btn:hover {
+  filter: brightness(130%);
 }
 
 .progress {
@@ -258,9 +261,26 @@ body {
   cursor: pointer;
 }
 .progress__filled {
+  position: relative;
   width: 0;
   height: 100%;
   background-color: var(--color-video-progress);
+}
+.progress__filled::after {
+  position: absolute;
+  right: 0;
+  display: block;
+  content: "";
+  width: var(--height-video-progress-fixed);
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translateX(50%) scale(2.2);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  aspect-ratio: 1/1;
+}
+.progress:hover .progress__filled::after {
+  opacity: 1;
 }
 
 .play-btn {
@@ -365,12 +385,7 @@ body {
   transition-property: height;
 }
 .video-player:hover .video-player__progress, .video-player__progress--fixed {
-  height: 15px;
-}
-@media (max-width: 480px) {
-  .video-player:hover .video-player__progress, .video-player__progress--fixed {
-    height: 10px;
-  }
+  height: var(--height-video-progress-fixed);
 }
 .video-player__poster {
   content: "";

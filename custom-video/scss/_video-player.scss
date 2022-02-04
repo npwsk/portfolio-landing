@@ -58,11 +58,7 @@
 
   &:hover &__progress,
   &__progress--fixed {
-    height: 15px;
-
-    @media (max-width: $breakpoint-mobile) {
-      height: 10px;
-    }
+    height: var(--height-video-progress-fixed);
   }
 
   &__poster {
