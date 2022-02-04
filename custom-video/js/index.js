@@ -72,7 +72,12 @@ const scrub = (e) => {
 };
 
 const progressLoop = () => {
-  progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+  const percent = (video.currentTime / video.duration) * 100;
+  progressBar.style.width = `${percent}%`;
+  if (percent === 100) {
+    playerState.state = PAUSED;
+    updatePlayer();
+  }
   requestAnimationFrame(progressLoop);
 };
 
