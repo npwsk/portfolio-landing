@@ -1,31 +1,13 @@
+@use "variables" as *;
+
 .video-player {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   overflow: hidden;
-
-  &__play {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    display: block;
-    width: 150px;
-    height: 150px;
-    background-image: url("../assets/svg/play-btn.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
-    transition: filter 0.1s ease-in;
-
-    &:hover {
-      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-    }
-  }
-
-  &--playing &__play {
-    display: none;
-  }
+  aspect-ratio: 1400 / 705;
 
   &__video {
     display: block;
@@ -38,16 +20,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
+    box-shadow: none;
     transition: box-shadow 0.3s ease-in;
     pointer-events: none;
+
+    &--visible {
+      box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
+    }
   }
 
-  &--playing &__shadow {
-    box-shadow: none;
-  }
-
-  &--playing:hover &__shadow {
+  &:hover &__shadow {
     box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
   }
 
@@ -55,100 +37,75 @@
     position: absolute;
     bottom: 0;
     z-index: 1;
-    transform: translateY(0);
-    transition: transform 0.3s ease-in;
-  }
-
-  &--playing &__controls {
     transform: translateY(100%) translateY(-5px);
+    transition: transform 0.3s ease-in;
+
+    &--fixed {
+      transform: translateY(0);
+    }
   }
 
-  &--playing:hover &__controls {
+  &:hover &__controls {
     transform: translateY(0);
   }
 
   &__progress {
-    box-sizing: border-box;
-    width: 100%;
-    height: 15px;
-    background: var(--color-bg-video-progress);
-    border: none;
-    cursor: pointer;
+    align-self: flex-start;
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
     transition-property: height;
   }
 
-  &__progress-filled {
-    width: 0;
-    height: 100%;
-    background-color: var(--color-video-progress);
-  }
-
-  &--playing &__progress {
-    height: 5px;
-  }
-
-  &--playing:hover &__progress {
+  &:hover &__progress,
+  &__progress--fixed {
     height: 15px;
   }
 
-  &__play-btn {
-    background-image: url("../assets/svg/play.svg");
-  }
-
-  &--playing &__play-btn {
-    background-image: url("../assets/svg/pause.svg");
-  }
-
-  &__volume-btn {
-    background-image: url("../assets/svg/volume.svg");
-
-    &--muted {
-      background-image: url("../assets/svg/mute.svg");
-    }
-  }
-
-  &__volume-range {
+  &__poster {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: block;
     width: 100%;
-    margin: 0;
-    background: transparent;
-    -webkit-appearance: none;
+    height: 100%;
+    background-image: url("../assets/img/video-poster.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
 
-    &::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 3px;
-      background: rgba(255 255 255 / 80%);
-      border: none;
-      border-radius: 1.3px;
-      cursor: pointer;
+    &--hidden {
+      display: none;
     }
 
-    &::-moz-range-track {
-      width: 100%;
-      height: 3px;
-      background: rgba(255 255 255 / 80%);
-      border-radius: 1.3px;
-      cursor: pointer;
+    @media (max-width: $breakpoint-tablet) {
+      background-image: url("../assets/img/video-poster-tablet.jpg");
+    }
+  }
+
+  &__play {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 150px;
+    height: 150px;
+    background-image: url("../assets/svg/play-btn.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: filter 0.1s ease-in;
+
+    &:hover {
+      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
     }
 
-    &::-webkit-slider-thumb {
-      width: 15px;
-      height: 15px;
-      margin-top: -6.5px;
-      background: #ffffff;
-      border-radius: 50%;
-      cursor: pointer;
-      -webkit-appearance: none;
+    &--visible {
+      display: block;
     }
 
-    &::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      background: #ffffff;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
+    @media (max-width: $breakpoint-tablet) {
+      width: 64.62px;
+      height: 64.62px;
     }
   }
 }
