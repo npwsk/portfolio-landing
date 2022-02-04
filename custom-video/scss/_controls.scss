@@ -1,0 +1,27 @@
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgba(0 0 0 / 50%);
+
+  &__inner {
+    display: flex;
+    gap: 30px;
+    padding: 20px 30px;
+  }
+
+  &__btn {
+    min-width: 30px;
+    height: 30px;
+    padding: 0;
+    font: inherit;
+    background: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+  }
+}

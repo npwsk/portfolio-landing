@@ -34,24 +34,20 @@
         <div class="video-player">
           <video class="video-player__video" src="./assets/video/video.mp4"></video>
           <div class="video-player__shadow"></div>
-          <div class="video-player__controls">
+          <div class="video-player__controls controls">
             <div class="video-player__progress">
               <div class="video-player__progress-filled"></div>
             </div>
-            <div class="video-player__controls-inner">
-              <button class="video-player__button video-player__button--play" title="Play"></button>
-              <button
-                class="video-player__button video-player__button--volume"
-                title="Mute"
-              ></button>
+            <div class="controls__inner">
+              <button class="video-player__play-btn controls__btn" title="Play"></button>
+              <button class="video-player__volume-btn controls__btn" title="Mute"></button>
               <input
-                class="video-player__slider"
+                class="video-player__volume-range"
                 type="range"
-                name="volume"
                 min="0"
-                max="100"
-                step="1"
-                value="100"
+                max="1"
+                step="0.01"
+                value="1"
               />
             </div>
           </div>
