@@ -236,7 +236,29 @@ body {
 
 .video-player {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+}
+.video-player__play {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-image: url("../assets/svg/play-btn.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition: filter 0.1s ease-in;
+}
+.video-player__play:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+.video-player--playing .video-player__play {
+  display: none;
 }
 .video-player__video {
   display: block;

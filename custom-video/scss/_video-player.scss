@@ -1,6 +1,31 @@
 .video-player {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+
+  &__play {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-image: url("../assets/svg/play-btn.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: filter 0.1s ease-in;
+
+    &:hover {
+      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    }
+  }
+
+  &--playing &__play {
+    display: none;
+  }
 
   &__video {
     display: block;

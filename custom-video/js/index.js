@@ -1,6 +1,7 @@
 const player = document.querySelector('.video-player');
 const video = player.querySelector('.video-player__video');
-const playButton = player.querySelector('.video-player__play-btn');
+const playButton = player.querySelector('.video-player__play');
+const controlsPlayButton = player.querySelector('.video-player__play-btn');
 const progress = player.querySelector('.video-player__progress');
 const progressBar = player.querySelector('.video-player__progress-filled');
 const volumeButton = player.querySelector('.video-player__volume-btn');
@@ -12,10 +13,10 @@ const toggleVideoMute = () => (video.muted = !video.muted);
 const updatePlayer = () => {
   if (video.paused) {
     player.classList.remove('video-player--playing');
-    playButton.title = 'Play';
+    controlsPlayButton.title = 'Play';
   } else {
     player.classList.add('video-player--playing');
-    playButton.title = 'Pause';
+    controlsPlayButton.title = 'Pause';
   }
 };
 
@@ -52,6 +53,7 @@ video.addEventListener('pause', updatePlayer);
 video.addEventListener('play', progressLoop);
 video.addEventListener('volumechange', updateVolumeBtn);
 playButton.addEventListener('click', toggleVideoPlay);
+controlsPlayButton.addEventListener('click', toggleVideoPlay);
 volumeButton.addEventListener('click', toggleVideoMute);
 
 let volumeMousedown = false;
