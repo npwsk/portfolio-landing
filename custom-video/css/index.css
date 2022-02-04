@@ -219,6 +219,11 @@ body {
   height: 60px;
   background-color: black;
 }
+@media (max-width: 480px) {
+  .controls {
+    height: 40px;
+  }
+}
 .controls__inner {
   display: flex;
   gap: 30px;
@@ -236,6 +241,12 @@ body {
   background-size: contain;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 480px) {
+  .controls__btn {
+    min-width: 20px;
+    height: 20px;
+  }
 }
 
 .progress {
@@ -356,6 +367,11 @@ body {
 .video-player:hover .video-player__progress, .video-player__progress--fixed {
   height: 15px;
 }
+@media (max-width: 480px) {
+  .video-player:hover .video-player__progress, .video-player__progress--fixed {
+    height: 10px;
+  }
+}
 .video-player__poster {
   content: "";
   position: absolute;
@@ -399,6 +415,12 @@ body {
   .video-player__play {
     width: 64.62px;
     height: 64.62px;
+  }
+}
+@media (max-width: 480px) {
+  .video-player__play {
+    width: 50px;
+    height: 50px;
   }
 }
 
