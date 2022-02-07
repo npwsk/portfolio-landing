@@ -236,7 +236,18 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: var(--height-video-controls);
-  background-color: var(--color-bg-controls);
+}
+.controls__background {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  pointer-events: none;
 }
 .controls__inner {
   display: flex;
@@ -415,6 +426,9 @@ body {
 }
 .video-player:hover .video-player__controls {
   transform: translateY(0);
+}
+.video-player__controls--fixed .controls__background, .video-player:hover .controls__background {
+  opacity: 1;
 }
 .video-player__progress {
   align-self: flex-start;

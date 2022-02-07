@@ -50,6 +50,11 @@
     transform: translateY(0);
   }
 
+  &__controls--fixed .controls__background,
+  &:hover .controls__background {
+    opacity: 1;
+  }
+
   &__progress {
     align-self: flex-start;
     margin-top: calc(-1 * (var(--height-video-progress) + var(--height-video-progress-inner)) / 2);
