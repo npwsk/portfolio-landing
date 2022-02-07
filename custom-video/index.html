@@ -36,9 +36,9 @@
           <div class="video-player__shadow"></div>
           <div class="video-player__controls controls">
             <div class="controls__background"></div>
-            <div class="video-player__progress progress">
+            <div class="video-player__progress progress" tabindex="2">
               <div class="progress__inner">
-                <div class="progress__filled" tabindex="2"></div>
+                <div class="progress__filled"></div>
               </div>
             </div>
             <div class="controls__inner">
@@ -71,10 +71,24 @@
                 <div class="timer__total-time"></div>
               </div>
               <button
+                class="skip-btn skip-btn--back controls__btn"
+                title="-10s"
+                data-skip="-10"
+                type="button"
+                tabindex="6"
+              ></button>
+              <button
+                class="skip-btn skip-btn--forward controls__btn"
+                title="+10s"
+                data-skip="10"
+                type="button"
+                tabindex="7"
+              ></button>
+              <button
                 class="fullscreen-btn controls__btn"
                 title="Fullscreen (f)"
                 type="button"
-                tabindex="6"
+                tabindex="8"
               ></button>
             </div>
           </div>

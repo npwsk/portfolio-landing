@@ -308,7 +308,7 @@ body {
   transition: opacity 0.2s ease;
   aspect-ratio: 1/1;
 }
-.progress:hover .progress__filled::after {
+.progress__filled:focus::after, .progress:hover .progress__filled::after {
   opacity: 1;
 }
 
@@ -378,8 +378,15 @@ body {
   opacity: 0.8;
 }
 
-.fullscreen-btn {
+.skip-btn--back {
   margin-left: auto;
+  background-image: url("../assets/svg/back-10.svg");
+}
+.skip-btn--forward {
+  background-image: url("../assets/svg/forward-10.svg");
+}
+
+.fullscreen-btn {
   background-image: url("../assets/svg/fullscreen.svg");
 }
 

@@ -10,6 +10,7 @@ const muteControl = player.querySelector('.volume-btn');
 const volumeSlider = player.querySelector('.volume-range');
 const timerCurrent = player.querySelector('.timer__current-time');
 const timerTotal = player.querySelector('.timer__total-time');
+const skipButtons = player.querySelectorAll('.skip-btn');
 const fullscreenBtn = player.querySelector('.fullscreen-btn');
 const poster = player.querySelector('.video-player__poster');
 const shadow = player.querySelector('.video-player__shadow');
@@ -127,6 +128,7 @@ const openFullscreen = () => {
 };
 
 const handleVideoKeys = (e) => {
+  console.log(e);
   switch (e.keyCode) {
     case 32:
     case 75:
@@ -138,7 +140,22 @@ const handleVideoKeys = (e) => {
     case 70:
       openFullscreen();
       return;
+    case 39:
+      skip(10);
+      return;
+    case 37:
+      skip(-10);
+      return;
   }
+};
+
+const skip = (seconds) => {
+  video.currentTime += seconds;
+};
+
+const handleSkipClick = (e) => {
+  const skipSeconds = parseFloat(e.target.dataset.skip);
+  skip(skipSeconds);
 };
 
 const showVolumeSlider = () => volumeContainer.classList.add('volume-controls--active');
@@ -146,6 +163,8 @@ const hideVolumeSlider = () => volumeContainer.classList.remove('volume-controls
 
 window.addEventListener('load', updateVolumeSliderColor);
 video.addEventListener('loadedmetadata', initVideoTimer);
+
+player.addEventListener('keydown', handleVideoKeys);
 
 poster.addEventListener('click', toggleVideoPlay, { once: true });
 poster.addEventListener('click', hidePoster, { once: true });
@@ -158,11 +177,7 @@ video.addEventListener('play', updatePlayer);
 video.addEventListener('play', updateProgress);
 video.addEventListener('pause', updatePlayer);
 
-video.addEventListener('play', (e) => {
-  video.focus();
-});
-
-video.addEventListener('keydown', handleVideoKeys);
+video.addEventListener('play', () => video.focus());
 
 video.addEventListener('volumechange', updateVolumeBtn);
 
@@ -185,3 +200,4 @@ progress.addEventListener('mouseup', () => (progressMousedown = false));
 progress.addEventListener('mousedown', () => (progressMousedown = true));
 
 fullscreenBtn.addEventListener('click', openFullscreen);
+skipButtons.forEach((btn) => btn.addEventListener('click', handleSkipClick));

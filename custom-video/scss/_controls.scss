@@ -168,7 +168,17 @@
   opacity: 0.8;
 }
 
+.skip-btn {
+  &--back {
+    margin-left: auto;
+    background-image: url("../assets/svg/back-10.svg");
+  }
+
+  &--forward {
+    background-image: url("../assets/svg/forward-10.svg");
+  }
+}
+
 .fullscreen-btn {
-  margin-left: auto;
   background-image: url("../assets/svg/fullscreen.svg");
 }
