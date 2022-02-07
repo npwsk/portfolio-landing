@@ -1,6 +1,9 @@
 @use "variables" as *;
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
   color: var(--color-text);
@@ -27,6 +30,7 @@ body {
 
 .main {
   padding-block: 50px;
+  margin-bottom: auto;
 }
 
 .container {
