@@ -7,6 +7,8 @@ const progressBar = player.querySelector('.progress__filled');
 const playControl = player.querySelector('.play-btn');
 const volumeControl = player.querySelector('.volume-btn');
 const volumeSlider = player.querySelector('.volume-range');
+const timerCurrent = player.querySelector('.timer__current-time');
+const timerTotal = player.querySelector('.timer__total-time');
 const poster = player.querySelector('.video-player__poster');
 const shadow = player.querySelector('.video-player__shadow');
 
@@ -17,6 +19,12 @@ const PAUSED = 'paused';
 const playerState = {
   state: INITIAL,
   isMuted: false,
+};
+
+const formatSeconds = (seconds) => {
+  return seconds < 3600
+    ? new Date(seconds * 1000).toISOString().slice(14, 19)
+    : new Date(seconds * 1000).toISOString().slice(11, 19);
 };
 
 const toggleVideoPlay = () => {
@@ -47,6 +55,11 @@ const updatePlayer = () => {
     progress.classList.add('video-player__progress--fixed');
     shadow.classList.add('video-player__shadow--visible');
   }
+};
+
+const initVideoTimer = () => {
+  timerCurrent.textContent = formatSeconds(0);
+  timerTotal.textContent = formatSeconds(video.duration);
 };
 
 const updateVolumeBtn = () => {
@@ -88,17 +101,19 @@ const scrub = (e) => {
   video.currentTime = scrubTime;
 };
 
-const progressLoop = () => {
+const updateProgress = () => {
   const percent = (video.currentTime / video.duration) * 100;
   progressBar.style.width = `${percent}%`;
+  timerCurrent.textContent = formatSeconds(video.currentTime);
   if (percent === 100) {
     playerState.state = PAUSED;
     updatePlayer();
   }
-  requestAnimationFrame(progressLoop);
+  requestAnimationFrame(updateProgress);
 };
 
 window.addEventListener('load', updateVolumeSliderColor);
+video.addEventListener('loadedmetadata', initVideoTimer);
 
 poster.addEventListener('click', toggleVideoPlay, { once: true });
 poster.addEventListener('click', hidePoster, { once: true });
@@ -108,7 +123,7 @@ playControl.addEventListener('click', toggleVideoPlay);
 video.addEventListener('click', toggleVideoPlay);
 
 video.addEventListener('play', updatePlayer);
-video.addEventListener('play', progressLoop);
+video.addEventListener('play', updateProgress);
 video.addEventListener('pause', updatePlayer);
 
 video.addEventListener('volumechange', updateVolumeBtn);

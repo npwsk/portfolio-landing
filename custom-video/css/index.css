@@ -336,6 +336,12 @@ body {
   cursor: pointer;
 }
 
+.timer {
+  display: flex;
+  gap: 10px;
+  opacity: 0.8;
+}
+
 .video-player {
   position: relative;
   display: flex;
