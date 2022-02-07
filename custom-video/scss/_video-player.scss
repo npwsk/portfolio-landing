@@ -12,6 +12,10 @@
   &__video {
     display: block;
     width: 100%;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__shadow {

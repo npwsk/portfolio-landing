@@ -114,7 +114,6 @@
   margin: 0;
   border: none;
   border-radius: 1px;
-  outline: none;
   // stylelint-disable-next-line property-no-vendor-prefix
   -webkit-appearance: none;
 
@@ -144,9 +143,9 @@
   align-items: center;
   box-sizing: border-box;
   width: var(--size-video-control-btn);
-  overflow: hidden;
   transition: width 0.3s ease-in;
 
+  &--active,
   &:hover {
     width: 150px;
   }
@@ -157,6 +156,7 @@
     transition: opacity 0.3s ease-in;
   }
 
+  &--active &__range,
   &:hover &__range {
     opacity: 1;
   }

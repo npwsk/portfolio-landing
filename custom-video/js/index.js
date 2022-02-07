@@ -5,7 +5,8 @@ const controls = player.querySelector('.controls');
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
 const playControl = player.querySelector('.play-btn');
-const volumeControl = player.querySelector('.volume-btn');
+const volumeContainer = player.querySelector('.volume-controls');
+const muteControl = player.querySelector('.volume-btn');
 const volumeSlider = player.querySelector('.volume-range');
 const timerCurrent = player.querySelector('.timer__current-time');
 const timerTotal = player.querySelector('.timer__total-time');
@@ -48,6 +49,7 @@ const updatePlayer = () => {
     controls.classList.remove('video-player__controls--fixed');
     progress.classList.remove('video-player__progress--fixed');
     shadow.classList.remove('video-player__shadow--visible');
+    playControl.title = 'Pause (space/k)';
   }
   if (playerState.state === PAUSED) {
     playBtn.classList.add('video-player__play--visible');
@@ -55,6 +57,7 @@ const updatePlayer = () => {
     controls.classList.add('video-player__controls--fixed');
     progress.classList.add('video-player__progress--fixed');
     shadow.classList.add('video-player__shadow--visible');
+    playControl.title = 'Play (space/k)';
   }
 };
 
@@ -65,11 +68,11 @@ const initVideoTimer = () => {
 
 const updateVolumeBtn = () => {
   if (video.volume && !video.muted) {
-    volumeControl.classList.remove('volume-btn--muted');
-    volumeControl.title = 'Mute';
+    muteControl.classList.remove('volume-btn--muted');
+    muteControl.title = 'Mute (m)';
   } else {
-    volumeControl.classList.add('volume-btn--muted');
-    volumeControl.title = 'Unmute';
+    muteControl.classList.add('volume-btn--muted');
+    muteControl.title = 'Unmute (m)';
   }
 };
 
@@ -123,6 +126,24 @@ const openFullscreen = () => {
   }
 };
 
+const handleVideoKeys = (e) => {
+  switch (e.keyCode) {
+    case 32:
+    case 75:
+      toggleVideoPlay();
+      return;
+    case 77:
+      toggleVideoMute();
+      return;
+    case 70:
+      openFullscreen();
+      return;
+  }
+};
+
+const showVolumeSlider = () => volumeContainer.classList.add('volume-controls--active');
+const hideVolumeSlider = () => volumeContainer.classList.remove('volume-controls--active');
+
 window.addEventListener('load', updateVolumeSliderColor);
 video.addEventListener('loadedmetadata', initVideoTimer);
 
@@ -137,9 +158,19 @@ video.addEventListener('play', updatePlayer);
 video.addEventListener('play', updateProgress);
 video.addEventListener('pause', updatePlayer);
 
+video.addEventListener('play', (e) => {
+  video.focus();
+});
+
+video.addEventListener('keydown', handleVideoKeys);
+
 video.addEventListener('volumechange', updateVolumeBtn);
 
-volumeControl.addEventListener('click', toggleVideoMute);
+muteControl.addEventListener('click', toggleVideoMute);
+muteControl.addEventListener('focus', showVolumeSlider);
+muteControl.addEventListener('blur', hideVolumeSlider);
+volumeSlider.addEventListener('focus', showVolumeSlider);
+volumeSlider.addEventListener('blur', hideVolumeSlider);
 
 let volumeMousedown = false;
 volumeSlider.addEventListener('change', handleVolumeSliderUpdate);

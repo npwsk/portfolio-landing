@@ -32,22 +32,28 @@
       <div class="video__container container">
         <h2 class="section__title title">Video</h2>
         <div class="video-player">
-          <video class="video-player__video" src="./assets/video/video.mp4"></video>
+          <video class="video-player__video" src="./assets/video/video.mp4" tabindex="1"></video>
           <div class="video-player__shadow"></div>
           <div class="video-player__controls controls">
             <div class="controls__background"></div>
             <div class="video-player__progress progress">
               <div class="progress__inner">
-                <div class="progress__filled"></div>
+                <div class="progress__filled" tabindex="2"></div>
               </div>
             </div>
             <div class="controls__inner">
-              <button class="play-btn controls__btn" title="Play" type="button"></button>
+              <button
+                class="play-btn controls__btn"
+                title="Play (space/k)"
+                type="button"
+                tabindex="3"
+              ></button>
               <div class="volume-controls">
                 <button
                   class="volume-controls__btn volume-btn controls__btn"
-                  title="Mute"
+                  title="Mute (m)"
                   type="button"
+                  tabindex="4"
                 ></button>
                 <input
                   class="volume-controls__range volume-range"
@@ -56,6 +62,7 @@
                   max="1"
                   step="0.01"
                   value="1"
+                  tabindex="5"
                 />
               </div>
               <div class="timer">
@@ -65,8 +72,9 @@
               </div>
               <button
                 class="fullscreen-btn controls__btn"
-                title="Fullscreen"
+                title="Fullscreen (f)"
                 type="button"
+                tabindex="6"
               ></button>
             </div>
           </div>
