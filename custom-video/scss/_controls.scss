@@ -13,6 +13,7 @@
     display: flex;
     gap: var(--gap-controls);
     align-items: center;
+    width: 100%;
     padding-inline: 30px;
   }
 
@@ -153,4 +154,9 @@
   display: flex;
   gap: 10px;
   opacity: 0.8;
+}
+
+.fullscreen-btn {
+  margin-left: auto;
+  background-image: url("../assets/svg/fullscreen.svg");
 }

@@ -9,6 +9,7 @@ const volumeControl = player.querySelector('.volume-btn');
 const volumeSlider = player.querySelector('.volume-range');
 const timerCurrent = player.querySelector('.timer__current-time');
 const timerTotal = player.querySelector('.timer__total-time');
+const fullscreenBtn = player.querySelector('.fullscreen-btn');
 const poster = player.querySelector('.video-player__poster');
 const shadow = player.querySelector('.video-player__shadow');
 
@@ -112,6 +113,16 @@ const updateProgress = () => {
   requestAnimationFrame(updateProgress);
 };
 
+const openFullscreen = () => {
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    video.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    video.msRequestFullscreen();
+  }
+};
+
 window.addEventListener('load', updateVolumeSliderColor);
 video.addEventListener('loadedmetadata', initVideoTimer);
 
@@ -141,3 +152,5 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (e) => progressMousedown && scrub(e));
 progress.addEventListener('mouseup', () => (progressMousedown = false));
 progress.addEventListener('mousedown', () => (progressMousedown = true));
+
+fullscreenBtn.addEventListener('click', openFullscreen);
