@@ -6,7 +6,7 @@ const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
 const playControl = player.querySelector('.play-btn');
 const volumeControl = player.querySelector('.volume-btn');
-const volumeRange = player.querySelector('.volume-range');
+const volumeSlider = player.querySelector('.volume-range');
 const poster = player.querySelector('.video-player__poster');
 const shadow = player.querySelector('.video-player__shadow');
 
@@ -59,11 +59,28 @@ const updateVolumeBtn = () => {
   }
 };
 
-const handleVolumeRangeUpdate = (e) => {
-  video.volume = e.target.value;
-  if (e.target.value) {
+const updateVolumeSliderColor = () => {
+  const { value, min, max } = volumeSlider;
+  const valuePercent = ((value - min) / (max - min)) * 100;
+
+  volumeSlider.style.background =
+    'linear-gradient(to right, var(--color-volume-before-thumb) 0%,' +
+    'var(--color-volume-before-thumb) ' +
+    valuePercent +
+    '%, var(--color-volume-after-thumb) ' +
+    valuePercent +
+    '%, var(--color-volume-after-thumb)';
+};
+
+const handleVolumeSliderUpdate = (e) => {
+  const { value } = e.target;
+  video.volume = value;
+
+  if (value) {
     video.muted = false;
   }
+
+  updateVolumeSliderColor();
 };
 
 const scrub = (e) => {
@@ -81,6 +98,8 @@ const progressLoop = () => {
   requestAnimationFrame(progressLoop);
 };
 
+window.addEventListener('load', updateVolumeSliderColor);
+
 poster.addEventListener('click', toggleVideoPlay, { once: true });
 poster.addEventListener('click', hidePoster, { once: true });
 playBtn.addEventListener('click', hidePoster, { once: true });
@@ -97,10 +116,10 @@ video.addEventListener('volumechange', updateVolumeBtn);
 volumeControl.addEventListener('click', toggleVideoMute);
 
 let volumeMousedown = false;
-volumeRange.addEventListener('change', handleVolumeRangeUpdate);
-volumeRange.addEventListener('mousemove', (e) => volumeMousedown && handleVolumeRangeUpdate(e));
-volumeRange.addEventListener('mouseup', () => (volumeMousedown = false));
-volumeRange.addEventListener('mousedown', () => (volumeMousedown = true));
+volumeSlider.addEventListener('change', handleVolumeSliderUpdate);
+volumeSlider.addEventListener('mousemove', (e) => volumeMousedown && handleVolumeSliderUpdate(e));
+volumeSlider.addEventListener('mouseup', () => (volumeMousedown = false));
+volumeSlider.addEventListener('mousedown', () => (volumeMousedown = true));
 
 let progressMousedown = false;
 progress.addEventListener('click', scrub);

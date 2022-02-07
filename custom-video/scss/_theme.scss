@@ -48,6 +48,8 @@
   --color-bg-header-fixed: rgba(0 0 0 / 70%);
   --color-bg-video-progress: rgba(255 255 255 / 20%);
   --color-video-progress: #{$color-gold};
+  --color-volume-before-thumb: #{$color-white};
+  --color-volume-after-thumb: rgba(255 255 255 / 50%);
 }
 
 body.light-theme {
