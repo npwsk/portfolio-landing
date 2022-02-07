@@ -7,7 +7,7 @@
   box-sizing: border-box;
   width: 100%;
   height: var(--height-video-controls);
-  background-color: rgba(0 0 0 / 100%);
+  background-color: var(--color-bg-controls);
 
   &__inner {
     display: flex;
@@ -36,12 +36,20 @@
 }
 
 .progress {
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   width: 100%;
   height: 5px;
-  background: var(--color-bg-video-progress);
   border: none;
   cursor: pointer;
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    max-height: var(--height-video-progress-inner);
+    background: var(--color-bg-video-progress);
+  }
 
   &__filled {
     position: relative;
@@ -51,13 +59,14 @@
 
     &::after {
       position: absolute;
+      top: calc(-1 * (var(--height-video-progress) - var(--height-video-progress-inner)) / 2);
       right: 0;
       display: block;
       content: "";
-      width: var(--height-video-progress-fixed);
-      background-color: #ffffff;
+      width: var(--height-video-progress);
+      background-color: var(--color-video-progress);
       border-radius: 50%;
-      transform: translateX(50%) scale(2.2);
+      transform: translateX(50%);
       opacity: 0;
       transition: opacity 0.2s ease;
       aspect-ratio: 1 / 1;

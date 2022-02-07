@@ -37,7 +37,8 @@
     position: absolute;
     bottom: 0;
     z-index: 1;
-    transform: translateY(100%) translateY(-5px);
+    transform: translateY(100%)
+      translateY(calc((var(--height-video-progress) - var(--height-video-progress-inner)) / 2));
     transition: transform 0.3s ease-in;
 
     &--fixed {
@@ -51,6 +52,7 @@
 
   &__progress {
     align-self: flex-start;
+    margin-top: calc(-1 * (var(--height-video-progress) + var(--height-video-progress-inner)) / 2);
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
     transition-property: height;
@@ -58,7 +60,7 @@
 
   &:hover &__progress,
   &__progress--fixed {
-    height: var(--height-video-progress-fixed);
+    height: var(--height-video-progress);
   }
 
   &__poster {

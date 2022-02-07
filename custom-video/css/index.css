@@ -1,6 +1,7 @@
 :root {
   --paddinginline-container: 20px;
-  --height-video-progress-fixed: 8px;
+  --height-video-progress: 17px;
+  --height-video-progress-inner: 5px;
   --height-video-controls: 60px;
   --size-video-control-btn: 30px;
 }
@@ -52,6 +53,7 @@
   --color-bg-input: rgba(0 0 0 / 50%);
   --color-border: #bdae82;
   --color-bg-header-fixed: rgba(0 0 0 / 70%);
+  --color-bg-controls: rgba(0 0 0 / 70%);
   --color-bg-video-progress: rgba(255 255 255 / 20%);
   --color-video-progress: #bdae82;
   --color-volume-before-thumb: #ffffff;
@@ -229,7 +231,7 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: var(--height-video-controls);
-  background-color: black;
+  background-color: var(--color-bg-controls);
 }
 .controls__inner {
   display: flex;
@@ -255,12 +257,19 @@ body {
 }
 
 .progress {
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   width: 100%;
   height: 5px;
-  background: var(--color-bg-video-progress);
   border: none;
   cursor: pointer;
+}
+.progress__inner {
+  width: 100%;
+  height: 100%;
+  max-height: var(--height-video-progress-inner);
+  background: var(--color-bg-video-progress);
 }
 .progress__filled {
   position: relative;
@@ -270,13 +279,14 @@ body {
 }
 .progress__filled::after {
   position: absolute;
+  top: calc(-1 * (var(--height-video-progress) - var(--height-video-progress-inner)) / 2);
   right: 0;
   display: block;
   content: "";
-  width: var(--height-video-progress-fixed);
-  background-color: #ffffff;
+  width: var(--height-video-progress);
+  background-color: var(--color-video-progress);
   border-radius: 50%;
-  transform: translateX(50%) scale(2.2);
+  transform: translateX(50%);
   opacity: 0;
   transition: opacity 0.2s ease;
   aspect-ratio: 1/1;
@@ -359,7 +369,7 @@ body {
   position: absolute;
   bottom: 0;
   z-index: 1;
-  transform: translateY(100%) translateY(-5px);
+  transform: translateY(100%) translateY(calc((var(--height-video-progress) - var(--height-video-progress-inner)) / 2));
   transition: transform 0.3s ease-in;
 }
 .video-player__controls--fixed {
@@ -370,12 +380,13 @@ body {
 }
 .video-player__progress {
   align-self: flex-start;
+  margin-top: calc(-1 * (var(--height-video-progress) + var(--height-video-progress-inner)) / 2);
   transition-timing-function: ease-in;
   transition-duration: 0.3s;
   transition-property: height;
 }
 .video-player:hover .video-player__progress, .video-player__progress--fixed {
-  height: var(--height-video-progress-fixed);
+  height: var(--height-video-progress);
 }
 .video-player__poster {
   content: "";
