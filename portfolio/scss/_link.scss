@@ -1,6 +1,7 @@
 @use "variables" as *;
 
 .link {
+  display: inline-block;
   color: var(--color-link);
   text-decoration: none;
   transition-timing-function: $transition-function-theme;

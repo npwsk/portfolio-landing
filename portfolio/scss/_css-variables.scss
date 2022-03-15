@@ -4,8 +4,19 @@
   // ------ Gaps and paddings -------
 
   --paddinginline-container: 20px;
+  --height-video-progress: 17px;
+  --height-video-progress-inner: 5px;
+  --height-video-controls: 60px;
+  --size-video-control-btn: 30px;
+  --gap-controls: 30px;
 
-  @media (min-width: ($breakpoint-mobile + 1px)) and (max-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-tablet) {
     --paddinginline-container: 60px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    --paddinginline-container: 20px;
+    --height-video-controls: 40px;
+    --size-video-control-btn: 20px;
   }
 }

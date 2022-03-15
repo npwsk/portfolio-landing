@@ -9,8 +9,8 @@
     <link rel="manifest" href="site.webmanifest" />
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
     <!-- Fonts -->
@@ -193,13 +193,70 @@
 
       <section class="section" id="video">
         <div class="video__container container">
-          <h2 class="section__title title" data-i18n="video">Video</h2>
+          <h2 class="section__title title">Video</h2>
           <div class="video-player">
-            <div class="video-player__btn">
-              <svg class="video-player__btn-svg" width="130" height="130" aria-hidden="true">
-                <use href="assets/svg/sprite.svg#play-btn" />
-              </svg>
+            <video class="video-player__video" src="./assets/video/video.mp4" tabindex="1"></video>
+            <div class="video-player__shadow"></div>
+            <div class="video-player__controls controls">
+              <div class="controls__background"></div>
+              <div class="video-player__progress progress" tabindex="2">
+                <div class="progress__inner">
+                  <div class="progress__filled"></div>
+                </div>
+              </div>
+              <div class="controls__inner">
+                <button
+                  class="play-btn controls__btn"
+                  title="Play (space/k)"
+                  type="button"
+                  tabindex="3"
+                ></button>
+                <div class="volume-controls">
+                  <button
+                    class="volume-controls__btn volume-btn controls__btn"
+                    title="Mute (m)"
+                    type="button"
+                    tabindex="4"
+                  ></button>
+                  <input
+                    class="volume-controls__range volume-range"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1"
+                    tabindex="5"
+                  />
+                </div>
+                <div class="timer">
+                  <div class="timer__current-time"></div>
+                  <div class="times__separator">/</div>
+                  <div class="timer__total-time"></div>
+                </div>
+                <button
+                  class="skip-btn skip-btn--back controls__btn"
+                  title="-10s"
+                  data-skip="-10"
+                  type="button"
+                  tabindex="6"
+                ></button>
+                <button
+                  class="skip-btn skip-btn--forward controls__btn"
+                  title="+10s"
+                  data-skip="10"
+                  type="button"
+                  tabindex="7"
+                ></button>
+                <button
+                  class="fullscreen-btn controls__btn"
+                  title="Fullscreen (f)"
+                  type="button"
+                  tabindex="8"
+                ></button>
+              </div>
             </div>
+            <div class="video-player__poster"></div>
+            <div class="video-player__play video-player__play--visible"></div>
           </div>
         </div>
       </section>

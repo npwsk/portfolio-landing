@@ -112,3 +112,9 @@ body {
     }
   }
 }
+
+.video__container {
+  @media (max-width: $breakpoint-tablet) {
+    padding-inline: 0;
+  }
+}

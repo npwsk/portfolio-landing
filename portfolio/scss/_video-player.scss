@@ -1,0 +1,127 @@
+@use "variables" as *;
+
+.video-player {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1400 / 705;
+
+  &__video {
+    display: block;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in;
+    pointer-events: none;
+
+    &--visible {
+      box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
+    }
+  }
+
+  &:hover &__shadow {
+    box-shadow: 0 0 20px 10px rgba(0 0 0 / 20%) inset;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    transform: translateY(100%)
+      translateY(calc((var(--height-video-progress) - var(--height-video-progress-inner)) / 2));
+    transition: transform 0.3s ease-in;
+
+    &--fixed {
+      transform: translateY(0);
+    }
+  }
+
+  &:hover &__controls {
+    transform: translateY(0);
+  }
+
+  &__controls--fixed .controls__background,
+  &:hover .controls__background {
+    opacity: 1;
+  }
+
+  &__progress {
+    align-self: flex-start;
+    margin-top: calc(-1 * (var(--height-video-progress) + var(--height-video-progress-inner)) / 2);
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    transition-property: height;
+  }
+
+  &:hover &__progress,
+  &__progress--fixed {
+    height: var(--height-video-progress);
+  }
+
+  &__poster {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/video-poster.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+
+    &--hidden {
+      display: none;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      background-image: url("../assets/img/video-poster-tablet.jpg");
+    }
+  }
+
+  &__play {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 150px;
+    height: 150px;
+    background-image: url("../assets/svg/play-btn.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: filter 0.1s ease-in;
+
+    &:hover {
+      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    }
+
+    &--visible {
+      display: block;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 64.62px;
+      height: 64.62px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
